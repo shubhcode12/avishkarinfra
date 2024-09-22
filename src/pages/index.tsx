@@ -2,6 +2,7 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
+import { Button } from "@/components/ui/button";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,9 +43,10 @@ const images = [
 ];
 export default function Home() {
   return (
-   <div className="bg-primary py-4 w-full">
+   <div className="">
     {/* <ParallaxScroll images={images}/> */}
     {/* <ButtonsCard>sh</ButtonsCard> */}
+    <Button>Hi</Button>
    </div>
   );
 }
