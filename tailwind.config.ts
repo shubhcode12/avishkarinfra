@@ -25,11 +25,15 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#F58634",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#08110C",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        secondaryLight: {
+          DEFAULT: "#313131",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -52,6 +56,14 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      backgroundImage: {
+        'primary-grad': 'linear-gradient(92deg, #F08143 30.88%, #F06D43 93.98%)',
+        '1st': 'linear-gradient(to right, #FFCF13 0%, #997C0B 100%)',
+        '2nd': 'linear-gradient(to right, #9EA8BA 0%, #474C54 100%)',
+        '3rd': 'linear-gradient(to right, #D97E3D 0%, #99591A 100%)',
+        '4th': 'linear-gradient(to top, #FFFFFF 0%, #F6EDE1 100%)',
+'grad-gray': 'linear-gradient(to left, #FFFFFF 0%, #EEEEEE 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",
