@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/common/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,9 +45,13 @@ const images = [
 export default function Home() {
   return (
    <div className="">
-    {/* <ParallaxScroll images={images}/> */}
-    {/* <ButtonsCard>sh</ButtonsCard> */}
-    <Button>Hi</Button>
+   <Navbar/>
+   {/* <div className="hero-banner">
+
+   <ParallaxScroll images={images}/>
+   </div>
+   <ParallaxScroll images={images}/>
+   <ParallaxScroll images={images}/> */}
    </div>
   );
 }
