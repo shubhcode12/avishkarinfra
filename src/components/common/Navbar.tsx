@@ -25,7 +25,7 @@ export default function Navbar() {
     const current = (link: any) => link === router.pathname;
   return (
     <Disclosure as="nav" className="bg-transparent">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 py-5 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className=" inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
