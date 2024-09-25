@@ -111,34 +111,27 @@ export default function Home() {
         <Navbar2 />
       </div>
       <section className="w-full flex justify-center">
-        <main className={styles.videoContainer}>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className={styles.backgroundVideo}
-          >
-            <source src="/assets/homebg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute top-20 lg:top-[15rem] w-full">
-            <div className="flex justify-center w-full">
-              <div className="max-w-6xl">
-                <div className="flex flex-col lg:gap-10 justify-center items-center w-full">
-                  <div className="text-3xl lg:text-6xl max-w-4xl text-center text-white font-bold flex justify-center">
-                    Bringing A Refined Approach To Luxury Real Estate
-                  </div>
-                  <div className="w-full text-center text-white flex justify-center">
-                    Discover the Advantages of Eco-Friendly Homes with Our Real
-                    Estate Agency.
-                  </div>
-                </div>
-              </div>
+  <main >
+    <div >
+    
+    </div>
+    <div className="absolute top-20 lg:top-[15rem] w-full">
+      <div className="flex justify-center w-full">
+        <div className="max-w-6xl">
+          <div className="flex flex-col lg:gap-10 justify-center items-center w-full">
+            <div className="text-3xl lg:text-6xl max-w-4xl text-center text-white font-bold flex justify-center">
+              Bringing A Refined Approach To Luxury Real Estate
+            </div>
+            <div className="w-full text-center text-white flex justify-center">
+              Discover the Advantages of Eco-Friendly Homes with Our Real Estate Agency.
             </div>
           </div>
-        </main>
-      </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+
       <section className="w-full flex pt-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
