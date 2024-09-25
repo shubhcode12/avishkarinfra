@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { aboutscreen } from "../../public/assets/images";
 import { AppleCardsCarouselDemo } from "@/components/common/Team";
+import { StickyScrollRevealDemo } from "@/components/common/Sticky";
 const About = () => {
   return (
     <div>
@@ -42,11 +43,13 @@ const About = () => {
       <section className="w-full flex flex-col bg-secondary rounded-3xl justify-center px-4 py-24 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
-            <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
-            <div className="w-full flex flex-col gap-4">
-                <div>
+          <div>
                     <Button>About Us</Button>
                 </div>
+          <StickyScrollRevealDemo/>
+            {/* <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
+            <div className="w-full flex flex-col gap-4">
+                
                 <div className="text-white font-semibold text-3xl">
                 About Avishkar Infra
                 </div>
@@ -63,7 +66,7 @@ const About = () => {
             <div className="w-full">
                 <Image src={aboutscreen.aboutHero} alt="" className="h-64"/>
             </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

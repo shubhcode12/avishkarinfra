@@ -54,9 +54,46 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import BackgroundVideo from "@/components/common/BGVideo";
+import { StickyScrollRevealDemo } from "@/components/common/Sticky";
+import { FollowingPointerDemo } from "@/components/common/BlogCard";
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
 );
+
+const blogContents = [
+  {
+    slug: "amazing-tailwindcss-grid-layouts",
+    author: "Manu Arora",
+    date: "28th March, 2023",
+    title: "Amazing Tailwindcss Grid Layout Examples",
+    description:
+      "Grids are cool, but Tailwindcss grids are cooler. In this article, we will learn how to create amazing Grid layouts with Tailwindcs grid and React.",
+    image: "aboutscreen.aboutHero",
+    authorAvatar: "/manu.png",
+  },
+  {
+    slug: "responsive-design-with-flexbox",
+    author: "Jane Doe",
+    date: "15th April, 2023",
+    title: "Mastering Responsive Design with Flexbox",
+    description:
+      "Learn how to create flexible and responsive layouts using CSS Flexbox and Tailwindcss in this detailed guide.",
+    image: "flexbox-tutorial.image",
+    authorAvatar: "/jane.png",
+  },
+  {
+    slug: "nextjs-performance-optimization",
+    author: "John Smith",
+    date: "2nd May, 2023",
+    title: "Boosting Performance in Next.js Applications",
+    description:
+      "Explore various techniques to optimize performance in Next.js applications, ensuring faster load times and better user experience.",
+    image: "nextjs.performanceImage",
+    authorAvatar: "/john.png",
+  },
+];
+
 const items = [
   {
     title: "The Dawn of Innovation",
@@ -103,19 +140,29 @@ const items = [
   },
 ];
 
+
 export default function Home() {
   const [propertyType, setpropertyType] = useState("New to market");
   return (
     <div className="">
-      <div className="absolute w-full z-10">
+      <div className="fixed w-full z-10">
         <Navbar2 />
       </div>
-      <section className="w-full flex justify-center">
-  <main >
+      <section className="w-full hero-banner h-[30rem] flex justify-center px-4 lg:px-0">
+ 
     <div >
-    
+    <iframe
+        src="https://player.vimeo.com/video/833814572?title=0&dnt=1&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1&background=1&app_id=122963"
+        frameBorder="0"
+
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        
+        title="Background Video"
+      />
+   
     </div>
-    <div className="absolute top-20 lg:top-[15rem] w-full">
+    <div className="absolute  top-20 lg:top-[15rem] w-full">
       <div className="flex justify-center w-full">
         <div className="max-w-6xl">
           <div className="flex flex-col lg:gap-10 justify-center items-center w-full">
@@ -129,10 +176,9 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </main>
 </section>
 
-      <section className="w-full flex pt-24 justify-center px-4 lg:px-0">
+      <section className="w-full  flex pt-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
             <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
@@ -403,20 +449,15 @@ export default function Home() {
                   <div className="text-center">
                     High-quality homes with low-carbon impact.
                   </div>
-                  <div className="w-full">
-                    <div className="w-full">
-                      <BentoGrid2 className="w-full mx-auto">
-                        {items.map((item, i) => (
-                          <BentoGridItem2
-                            key={i}
-                            title={item.title}
-                            description={item.description}
-                            header={item.header}
-                            icon={item.icon}
-                            className={" col-span-1"}
-                          />
-                        ))}
-                      </BentoGrid2>
+                  <div className="max-w-6xl">
+                    <div className="w-full ">
+                   
+                      <div className="grid grid-cols-3">
+
+                      {blogContents.map((item: any) => (
+                        <FollowingPointerDemo key={item.slug} content={item} />
+                      ))}
+                      </div>
                     </div>
                   </div>
                 </div>

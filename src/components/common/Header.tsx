@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { logo } from '../../../public/assets/images'
 import Image from 'next/image'
 import { Button } from '../ui/button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -23,8 +23,26 @@ function classNames(...classes:any) {
 export default function Navbar2() {
     const router = useRouter();
     const current = (link: any) => link === router.pathname;
+    const [isScrolled, setIsScrolled] = useState(false)
+const isHomeRoute = router.pathname === '/'
+const isHomePage = router.pathname === '/'
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroElement = document.querySelector('.hero-banner')
+      const heroHeight = heroElement instanceof HTMLElement ? heroElement.offsetHeight : 0
+      setIsScrolled(window.scrollY > heroHeight)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const textColorClass = isScrolled ? 'text-black' : 'text-white'
+  const hoverBackgroundClass = isScrolled ? 'hover:underline' : 'hover:underline'
   return (
-    <Disclosure as="nav" className="bg-transparent">
+    <div className='w-full'>
+
+    <Disclosure as="nav" className={`${isHomePage && isScrolled ? 'bg-white' : 'bg-transparent'}`}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:py-5 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className=" inset-y-0 left-0 flex items-center sm:hidden">
@@ -54,9 +72,13 @@ export default function Navbar2() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    // className={classNames(
+                    //   current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
+                    //   `rounded-md px-3 py-2 text-sm font-medium ${isHomeRoute && isScrolled ? 'text-secondary' : 'text-white'}`,
+                    // )}
                     className={classNames(
-                      current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
+                      current(item.href) ? `${isHomePage && isScrolled ? 'text-white' : 'text-secondary'} ${textColorClass}` : `${textColorClass} ${hoverBackgroundClass}`,
+                      'rounded-md px-3 py-2 text-sm font-medium'
                     )}
                   >
                     {item.name}
@@ -66,7 +88,7 @@ export default function Navbar2() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 gap-4 sm:pr-0">
-            <Button className='bg-transparent text-white border hover:border-primary'>Login</Button>
+            {/* <Button className='bg-transparent text-white border hover:border-primary'>Login</Button> */}
 
             {/* Profile dropdown */}
             <Button>Get a Quote</Button>
@@ -83,7 +105,7 @@ export default function Navbar2() {
               href={item.href}
               className={classNames(
                 current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
+                `rounded-md px-3 py-2 text-sm font-medium ${isHomeRoute && isScrolled ? 'text-secondary' : 'text-white'}`,
               )}
             >
               {item.name}
@@ -92,5 +114,6 @@ export default function Navbar2() {
         </div>
       </DisclosurePanel>
     </Disclosure>
+    </div>
   )
 }
