@@ -57,6 +57,7 @@ import { Textarea } from "@/components/ui/textarea";
 import BackgroundVideo from "@/components/common/BGVideo";
 import { StickyScrollRevealDemo } from "@/components/common/Sticky";
 import { FollowingPointerDemo } from "@/components/common/BlogCard";
+import Footer from "@/components/common/Footer";
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
 );
@@ -739,6 +740,7 @@ export default function Home() {
    </div>
    <ParallaxScroll images={images}/>
    <ParallaxScroll images={images}/> */}
+   <Footer/>
     </div>
   );
 }
