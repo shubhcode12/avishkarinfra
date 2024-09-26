@@ -59,6 +59,7 @@ import { StickyScrollRevealDemo } from "@/components/common/Sticky";
 import { FollowingPointerDemo } from "@/components/common/BlogCard";
 import Footer from "@/components/common/Footer";
 import { CardHoverEffectDemo } from "@/components/common/Goal";
+import HeroWithOceanVideo from "@/components/common/HeroVideo";
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
 );
@@ -150,35 +151,8 @@ export default function Home() {
       <div className="fixed w-full z-10">
         <Navbar2 />
       </div>
-      <section className="w-full hero-banner h-[30rem] flex justify-center px-4 lg:px-0">
- 
-    <div >
-    <iframe
-        src="https://player.vimeo.com/video/833814572?title=0&dnt=1&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1&background=1&app_id=122963"
-        frameBorder="0"
+      <HeroWithOceanVideo/>
 
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        
-        title="Background Video"
-      />
-   
-    </div>
-    <div className="absolute  top-20 lg:top-[15rem] w-full">
-      <div className="flex justify-center w-full">
-        <div className="max-w-6xl">
-          <div className="flex flex-col lg:gap-10 justify-center items-center w-full">
-            <div className="text-3xl lg:text-6xl max-w-4xl text-center text-white font-bold flex justify-center">
-              Bringing A Refined Approach To Luxury Real Estate
-            </div>
-            <div className="w-full text-center text-white flex justify-center">
-              Discover the Advantages of Eco-Friendly Homes with Our Real Estate Agency.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
 
       <section className="w-full  flex pt-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">

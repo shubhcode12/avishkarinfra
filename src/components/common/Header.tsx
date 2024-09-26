@@ -58,8 +58,8 @@ const isHomePage = router.pathname === '/'
           <div className="flex flex-shrink-0 items-center">
           <Image
                 alt="Your Company"
-                src={logo.headerlogo}
-                className="h-[72px] mt-2 w-auto"
+                src={( isHomePage && isScrolled) ? logo.headerlogo : logo.headerlogowhite}
+                className={`${( isHomePage && isScrolled) ?"h-[72px]":"h-[52px]"} mt-2 w-auto`}
               />
               
             </div>
