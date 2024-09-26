@@ -312,13 +312,13 @@ export default function Home() {
       <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 bg-secondary rounded-3xl">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
-            <div className="flex justify-between  items-end w-full">
+            <div className="flex flex-col gap-8 lg:flex-row justify-center lg:justify-between  items-end w-full">
 <div className="text-white font-semibold text-5xl max-w-3xl">
 Where Innovation, Sustainability, 
 and Community Meet
 </div>
-<div>
-<Button className="flex justify-center gap-2">
+<div className="flex justify-center w-full lg:w-auto">
+<Button className="flex justify-center w-auto gap-2">
                     <span>View All Properties</span>
                     <span>
                       <Image src={common.arrowCrossRight} alt="" />
@@ -326,7 +326,7 @@ and Community Meet
                   </Button>
 </div>
             </div>
-            <div className="mt-24">
+            <div className="mt-12 lg:mt-24">
 
             <CardHoverEffectDemo/>
             </div>
