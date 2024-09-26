@@ -58,6 +58,7 @@ import BackgroundVideo from "@/components/common/BGVideo";
 import { StickyScrollRevealDemo } from "@/components/common/Sticky";
 import { FollowingPointerDemo } from "@/components/common/BlogCard";
 import Footer from "@/components/common/Footer";
+import { CardHoverEffectDemo } from "@/components/common/Goal";
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
 );
@@ -260,7 +261,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
+      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 ">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
             <div className="flex justify-center w-full gap-8">
@@ -308,6 +309,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 bg-secondary rounded-3xl">
+        <div className="flex justify-center w-full">
+          <div className="max-w-6xl w-full ">
+            <div className="flex justify-between  items-end w-full">
+<div className="text-white font-semibold text-5xl max-w-3xl">
+Where Innovation, Sustainability, 
+and Community Meet
+</div>
+<div>
+<Button className="flex justify-center gap-2">
+                    <span>View All Properties</span>
+                    <span>
+                      <Image src={common.arrowCrossRight} alt="" />
+                    </span>
+                  </Button>
+</div>
+            </div>
+            <div className="mt-24">
+
+            <CardHoverEffectDemo/>
+            </div>
+          </div>
+          </div>
+          </section>
       <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
