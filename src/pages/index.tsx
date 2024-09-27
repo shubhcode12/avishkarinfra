@@ -154,7 +154,7 @@ export default function Home() {
       <HeroWithOceanVideo/>
 
 
-      <section className="w-full  flex pt-24 justify-center px-4 lg:px-0">
+      <section className="w-full  flex pt-24 justify-center px-4 lg:px-0 ">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
             <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
@@ -204,7 +204,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="w-full">
+              <div className="w-full ">
                 <Image
                   src={Homescreen.home1}
                   className="w-full h-full"
@@ -215,7 +215,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex pt-24 justify-center px-4 lg:px-0">
+      <section className="w-full flex pt-24 justify-center px-4 lg:px-0 ">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full border-b pb-12">
             <div className="flex justify-center w-full gap-8">
@@ -241,8 +241,8 @@ export default function Home() {
             <div className="flex justify-center w-full gap-8">
               <div className="flex flex-col w-full gap-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 justify-center lg:justify-start items-center lg:items-start">
-                  <div className="flex  flex-col justify-center lg:justify-start gap-4 item-center lg:items-start">
-                    <div className="flex lg:gap-4 justify-center lg: justify-start items-end">
+                  <div className="flex  flex-col justify-center lg:justify-start gap-4 item-center lg:items-start ">
+                    <div className="flex lg:gap-4 justify-center lg:justify-start items-end">
                       <div className="text-7xl">10</div>
                       <div>
                         <Image src={common.plus} alt="" />
@@ -283,7 +283,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 bg-secondary rounded-3xl">
+      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 bg-secondary rounded-3xl hero-banner">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
             <div className="flex flex-col gap-8 lg:flex-row justify-center lg:justify-between  items-end w-full">
@@ -307,7 +307,7 @@ and Community Meet
           </div>
           </div>
           </section>
-      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
+      <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 ">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
             <div className="flex flex-col w-full gap-8">
@@ -732,13 +732,6 @@ and Community Meet
           </div>
         </div>
       </section> 
-
-      {/* <div className="hero-banner">
-
-   <ParallaxScroll images={images}/>
-   </div>
-   <ParallaxScroll images={images}/>
-   <ParallaxScroll images={images}/> */}
    <Footer/>
     </div>
   );

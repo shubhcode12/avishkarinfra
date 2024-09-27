@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 export default function HeroWithOceanVideo() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50rem] flex items-center justify-center overflow-hidden">
       <video
         autoPlay
         loop
