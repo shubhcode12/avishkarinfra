@@ -149,7 +149,7 @@ export default function Home() {
   return (
     <div className="">
       <div className="fixed w-full z-10">
-        <Navbar2 />
+        <Navbar />
       </div>
       <HeroWithOceanVideo/>
 
@@ -452,7 +452,7 @@ and Community Meet
                   <div className="max-w-6xl">
                     <div className="w-full ">
                    
-                      <div className="grid grid-cols-3">
+                      <div className="grid grid-cols-1 lg:grid-cols-3">
 
                       {blogContents.map((item: any) => (
                         <FollowingPointerDemo key={item.slug} content={item} />
@@ -466,7 +466,7 @@ and Community Meet
           </div>
         </section>
       </section>
-      <section>
+      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-cover lg:bg-contain bg-no-repeat">
         <AppleCardsCarouselDemo />
       </section>
       <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
@@ -714,8 +714,8 @@ and Community Meet
       <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
-            <div className="flex justify-center w-full rounded-3xl gap-8 bg-[url('../../public/assets/images/home/CTA.png')] object-cover">
-              <div className="flex flex-col gap-4 py-4 px-10 my-48 bg-white rounded-3xl">
+            <div className="flex justify-center w-full rounded-3xl gap-8 bg-[url('../../public/assets/images/home/CTA.png')] bg-cover lg:bg-contain bg-no-repeat">
+              <div className="flex flex-col gap-4 py-4 px-10 my-24 bg-white rounded-3xl">
                 <div className="text-secondary font-semibold text-3xl text-center max-w-md">Ready to find your eco-friendly home? </div>
                 <div className="text-secondary font-semibold text-center max-w-xl">We have homes in 20+ cities across the country to choose from!</div>
                 <div className="flex justify-center">

@@ -10,11 +10,11 @@ const services = () => {
   return (
     <div>
       <Navbar />
-      <section className="w-full flex pt-12 h-[50rem] justify-center px-4 lg:px-0 bg-[url('../../public/assets/images/about/hero.png')] object-cover">
+      <section className="w-full flex pt-12 h-[50rem] justify-center px-4 lg:px-0 bg-[url('../../public/assets/images/about/hero.png')] bg-cover lg:bg-contain bg-no-repeat">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full ">
             <div className="flex flex-col gap-8">
-              <div className="h-[20rem]"></div>
+              <div className="h-[12rem]"></div>
               <div className="text-6xl flex-1 font-semibold text-white">
                 Our work
               </div>

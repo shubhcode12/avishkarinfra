@@ -15,7 +15,7 @@ const About = () => {
           <div className="max-w-6xl w-full ">
             <div className="flex flex-col gap-8">
 
-            <div className="flex justify-start w-full rounded-3xl gap-8 bg-[url('../../public/assets/images/about/hero.png')] object-cover">
+            <div className="flex justify-start w-full rounded-3xl gap-8 bg-[url('../../public/assets/images/about/hero.png')]  bg-cover lg:bg-contain bg-no-repeat">
               <div className="flex flex-col gap-4 px-10 py-4 justify-start items-start my-48 rounded-3xl">
                 <div className="flex justify-start">
 

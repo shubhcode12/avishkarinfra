@@ -23,14 +23,15 @@ function classNames(...classes:any) {
 
 export default function Navbar() {
     const router = useRouter();
+    const [menu, setmenu] = useState(false);
     const current = (link: any) => link === router.pathname;
   return (
-    <Disclosure as="nav" className="bg-transparent">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 py-5 lg:px-8">
+    <Disclosure as="nav" className={` lg:mx-8 flex flex-col ${menu && "h-screen"} bg-black/40 fixed lg:top-8 inset-x-0 border border-white/20 dark:border-white/[0.2] lg:rounded-full dark:bg-black backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] `}>
+      <div className="mx-auto w-full px-2 ">
         <div className="relative flex h-16 items-center justify-between">
           <div className=" inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-secondary hover:underline hover:text-secondary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:underline hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={()=>setmenu(!menu)}>
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
@@ -41,8 +42,8 @@ export default function Navbar() {
           <div className="flex flex-shrink-0 items-center">
           <Image
                 alt="Your Company"
-                src={logo.headerlogo}
-                className="h-[72px] mt-2 w-auto"
+                src={logo.headerlogowhite}
+                className="pl-2 h-10 w-auto ml-4"
               />
               
             </div>
@@ -56,7 +57,7 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      current(item.href) ? 'underline text-secondary' : 'text-secondary hover:underline hover:text-secondary',
+                      current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
@@ -67,9 +68,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 gap-4 sm:pr-0">
-            <Button className='bg-white text-secondary border hover:text-white'>Login</Button>
-
-            {/* Profile dropdown */}
+            
             <Button>Get a Quote</Button>
           </div>
         </div>
@@ -83,7 +82,7 @@ export default function Navbar() {
               as="a"
               href={item.href}
               className={classNames(
-                current(item.href) ? 'underline text-secondary' : 'text-secondary hover:underline hover:text-secondary',
+                current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium',
               )}
             >
@@ -93,5 +92,6 @@ export default function Navbar() {
         </div>
       </DisclosurePanel>
     </Disclosure>
+
   )
 }
