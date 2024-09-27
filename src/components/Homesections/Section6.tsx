@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid2'
 import   {IconArrowWaveRightUp,
 IconBoxAlignRightFilled,
@@ -62,67 +62,95 @@ const items = [
     },
   ];
 const Section6 = () => {
-    const [propertyType, setpropertyType] = useState("New to market");
+    const [projects, setProjects] = useState<any[]>([]); // to hold project data
+  const [propertyType, setPropertyType] = useState("New to market");
+  const [loading, setLoading] = useState(true); // to manage loading state
+  useEffect(() => {
+    // Fetch data from your API
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects'); // adjust the path if needed
+        const data = await response.json();
+        setProjects(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
   return (
     <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0">
-        <div className="flex justify-center w-full">
-          <div className="px-8 w-full ">
-            <div className="flex justify-center w-full gap-8">
-              <div className="flex flex-col w-full gap-8">
-                <div className="flex justify-start text-3xl font-semibold">
-                  Explore Premium Properties Near You.
+      <div className="flex justify-center w-full">
+        <div className="px-8 w-full">
+          <div className="flex justify-center w-full gap-8">
+            <div className="flex flex-col w-full gap-8">
+              <div className="flex justify-start text-3xl font-semibold">
+                Explore Premium Properties Near You.
+              </div>
+              <div className="flex gap-8">
+                <div
+                  className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2 ${
+                    propertyType == "New to market" && "border-b-primary border-b-2"
+                  }`}
+                  onClick={() => setPropertyType("New to market")}
+                >
+                  New to market
                 </div>
-                <div className="flex gap-8">
-                  <div
-                    className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2  ${
-                      propertyType == "New to market" &&
-                      "border-b-primary border-b-2"
-                    }`}
-                    onClick={() => setpropertyType("New to market")}
-                  >
-                    New to market
-                  </div>
-                  <div
-                    className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2 ${
-                      propertyType == "Nature Nearby" &&
-                      "border-b-primary border-b-2"
-                    }`}
-                    onClick={() => setpropertyType("Nature Nearby")}
-                  >
-                    Nature Nearby
-                  </div>
-                  <div
-                    className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2 ${
-                      propertyType == "Most viewed" &&
-                      "border-b-primary border-b-2"
-                    }`}
-                    onClick={() => setpropertyType("Most viewed")}
-                  >
-                    Most viewed
-                  </div>
+                <div
+                  className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2 ${
+                    propertyType == "Nature Nearby" && "border-b-primary border-b-2"
+                  }`}
+                  onClick={() => setPropertyType("Nature Nearby")}
+                >
+                  Nature Nearby
                 </div>
-                <div className="bg-gray-400 h-[0.5px] w-full"></div>
+                <div
+                  className={`text-primary cursor-pointer hover:border-b-primary hover:border-b-2 pb-2 ${
+                    propertyType == "Most viewed" && "border-b-primary border-b-2"
+                  }`}
+                  onClick={() => setPropertyType("Most viewed")}
+                >
+                  Most viewed
+                </div>
+              </div>
+              <div className="bg-gray-400 h-[0.5px] w-full"></div>
+              <div className="w-full">
                 <div className="w-full">
-                  <div className="w-full">
-                    <BentoGrid className="w-full mx-auto">
-                      {items.map((item, i) => (
+                  <BentoGrid className="w-full mx-auto">
+                    {loading ? (
+                      Array(6).fill(0).map((_, i) => (
                         <BentoGridItem
                           key={i}
-                          title={item.title}
-                          description={item.description}
-                          header={item.header}
-                          icon={item.icon}
-                          className={" col-span-1"}
+                          title="Loading..."
+                          description="Loading..."
+                          header={<Skeleton />}
+                          icon={<Skeleton />}
+                          className={"col-span-1"}
                         />
-                      ))}
-                    </BentoGrid>
-                  </div>
+                      ))
+                    ) : (
+                      projects.map((project, i) => (
+                        <BentoGridItem
+                          key={i}
+                          title={project.title}
+                          description={project.summery}
+                          header={<img src={project.image.sizes.medium} alt={project.image.alt || 'Project Image'} />}
+                          icon={project?.address}
+                          className={"col-span-1"}
+                        />
+                      ))
+                    )}
+                  </BentoGrid>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   )
 }
 

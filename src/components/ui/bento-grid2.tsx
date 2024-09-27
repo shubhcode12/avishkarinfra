@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { IconClock, IconMapPinFilled } from "@tabler/icons-react";
-
+import { common } from "../../../public/assets/icon";
+import Image from "next/image";
 export const BentoGrid = ({
   className,
   children,
@@ -37,7 +38,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl group/bento h-96 hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-xl group/bento !h-[30rem] hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
     >
@@ -48,16 +49,17 @@ export const BentoGridItem = ({
           {title}
         </div>
         <div className="text-secondaryLight">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-          incidunt culpa velit dicta eum facilis aspernatur deserunt dolorem ex
-          accusamus!
+          {description}
         </div>
         <div className="flex justify-between">
-          <div className="text-secondary flex justify-start items-end font-semibold"><IconMapPinFilled className="text-primary mt-1" /> <span>Kolhapur</span></div>
+          <div className="text-secondary flex justify-start items-end font-semibold"><IconMapPinFilled className="text-primary mt-1" /> <span>{icon}</span></div>
           <div>
-            <Button className="uppercase !py-[1px]   w-8 !text-[8px]">
-              for sale{" "}
-            </Button>
+          <Button className="flex justify-center w-auto gap-2">
+                    <span>View</span>
+                    <span>
+                      <Image src={common.arrowCrossRight} alt="" />
+                    </span>
+                  </Button>
           </div>
         </div>
         {/* <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">

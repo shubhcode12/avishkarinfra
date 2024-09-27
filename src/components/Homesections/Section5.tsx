@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Homescreen } from '../../../public/assets/images'
 import { common } from '../../../public/assets/icon'
 import Image from 'next/image'
 const Section5 = () => {
+  
   return (
     <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 ">
         <div className="flex justify-center w-full">

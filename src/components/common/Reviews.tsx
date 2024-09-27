@@ -1,10 +1,29 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel2";
  
 export function AppleCardsCarouselDemo() {
-  const cards = data.map((card, index) => (
+  const [reviews, setReviews] = useState<any[]>([]); // to hold project data
+  const [propertyType, setPropertyType] = useState("New to market");
+  const [loading, setLoading] = useState(true); // to manage loading state
+  useEffect(() => {
+    // Fetch data from your API
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/testimonial'); // adjust the path if needed
+        const data = await response.json();
+        setReviews(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+  const cards = reviews.map((card, index) => (
     <Card key={card.src} card={card} index={index} layout={true} />
   ));
  
@@ -22,6 +41,7 @@ export function AppleCardsCarouselDemo() {
 }
  
 const DummyContent = () => {
+  
   return (
     <>
       {[...new Array(3).fill(1)].map((_, index) => {
@@ -53,54 +73,3 @@ const DummyContent = () => {
   );
 };
  
-const data = [
-  {
-    category: "",
-    title: "Susan Lanre",
-    src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.0,
-    desc:"“ I recently sold my home with EcoHaven Realty, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me. ”"
-  },
-  {
-    category: "",
-    title: "David T.",
-    src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.9,
-    desc:' “ I had a wonderful experience working with EcoHaven Realty to find my new home. They really took the time to understand what was important to me and helped me find a home that was not only beautiful but also eco-friendly and energy-efficient. ”'
-  },
-  {
-    category: "",
-    title: "Felix Jimoh",
-    src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.9,
-    desc:'“ EcoHaven Realty is an amazing real estate agency that truly understands the importance of sustainability and eco-friendliness. They helped me find a beautiful home that was not only environmentally conscious. ”'
-  },
- 
-  {
-    category: "",
-    title: "John Doe",
-    src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.9,
-    desc:"“ I recently sold my home with EcoHaven Realty, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me. ”"
-  },
-  {
-    category: "",
-    title: "Joe Tribioni",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.9,
-    desc:"“ I recently sold my home with EcoHaven Realty, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me. ”"
-  },
-  {
-    category: "",
-    title: "Chanddler Bing",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    rating: 4.9,
-    desc:"“ I recently sold my home with EcoHaven Realty, and I couldn't be happier with the experience. The team was knowledgeable, professional, and really took the time to understand what was important to me. ”"
-  },
-];

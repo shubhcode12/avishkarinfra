@@ -119,7 +119,7 @@ export default function Home() {
       <Section5/>
       <Section6/>
       <Section7/>
-      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-cover lg:bg-contain bg-no-repeat">
+      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] lg:bg-cover bg-contain bg-no-repeat">
         <AppleCardsCarouselDemo />
       </section>
       <Section8/>

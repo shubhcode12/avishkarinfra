@@ -13,17 +13,12 @@ export function FollowingPointerDemo({ content }: { content: any }) {
     >
         
       <FollowerPointerCard
-        title={
-          <TitleComponent
-            title={content.author}
-            avatar={content.authorAvatar}
-          />
-        }
+        
       >
         <div className=" h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
           <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 h-48 relative">
             <Image
-              src={content.iamge}
+              src={content.featured_media_src_url}
               alt="thumbnail"
               layout="fill"
               objectFit="cover"
@@ -71,10 +66,10 @@ const TitleComponent = ({
   <div className="flex space-x-2 items-center">
     <Image
       src={avatar}
-      height="20"
-      width="20"
+      height="100"
+      width="100"
       alt="thumbnail"
-      className="rounded-full border-2 border-white"
+      className="h-8 w-auto"
     />
     <p>{title}</p>
   </div>

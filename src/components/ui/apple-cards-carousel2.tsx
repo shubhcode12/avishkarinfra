@@ -131,7 +131,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              "absolute right-0  !z-8 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
             )}
           ></div>
 
@@ -167,14 +167,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
         <div className="flex justify-center gap-2 mr-10">
           <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className="relative !z-8 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
             <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
           </button>
           <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className="relative !z-8 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
@@ -229,8 +229,8 @@ export const Card = ({
 
   return (
     <>
-     <div className="flex justify-start -mb-8 sticky z-20 ml-5 ">
-              <div className="bg-[#E4E5DF] p-3 relative  rounded-full">
+     <div className="flex justify-start -mb-8 sticky !z-8 ml-5 ">
+              <div className="bg-[#E4E5DF] p-3 relative !z-8 rounded-full">
 
             <Image src={common.doubleQuote} alt=""/>
             </div>
@@ -240,8 +240,8 @@ export const Card = ({
         onClick={handleOpen}
         className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-40 w-36 md:h-[20rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
-        <div className="absolute h-full top-0 inset-x-0  z-30 pointer-events-none" />
-        <div className="relative z-40 p-8">
+        <div className="absolute h-full top-0 inset-x-0  !z-8 pointer-events-none" />
+        <div className="relative !z-8 p-8">
           
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
@@ -265,7 +265,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover absolute z-10 inset-0"
+          className="object-cover absolute !z-8 inset-0"
         />
       </motion.button>
     </>
