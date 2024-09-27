@@ -26,7 +26,7 @@ export default function Navbar() {
     const [menu, setmenu] = useState(false);
     const current = (link: any) => link === router.pathname;
   return (
-    <Disclosure as="nav" className={` lg:mx-8 flex flex-col ${menu && "h-screen"} bg-black/40 fixed lg:top-8 inset-x-0 border border-white/20 dark:border-white/[0.2] lg:rounded-full dark:bg-black backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] `}>
+    <Disclosure as="nav" className={` lg:mx-8 flex flex-col ${menu && "h-screen"} bg-black/40 fixed lg:top-8 inset-x-0 border border-white/20 dark:border-white/[0.2] lg:rounded-full dark:bg-black backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-50 `}>
       <div className="mx-auto w-full px-2 ">
         <div className="relative flex h-16 items-center justify-between">
           <div className=" inset-y-0 left-0 flex items-center sm:hidden">
@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch ">
             
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 ">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
