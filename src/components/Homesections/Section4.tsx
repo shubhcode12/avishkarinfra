@@ -7,7 +7,7 @@ const Section4 = () => {
   return (
     <section className="w-full flex pt-12 pb-24 justify-center px-4 lg:px-0 bg-secondary rounded-3xl hero-banner">
         <div className="flex justify-center w-full">
-          <div className="max-w-6xl w-full ">
+          <div className="px-8 w-full ">
             <div className="flex flex-col gap-8 lg:flex-row justify-center lg:justify-between  items-end w-full">
 <div className="text-white font-semibold text-5xl max-w-3xl">
 Where Innovation, Sustainability, 
