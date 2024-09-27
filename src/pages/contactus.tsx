@@ -26,7 +26,7 @@ const Contactus = () => {
   return (
     <div>
       <Navbar/>
-      <section className="w-full flex flex-col bg-[#999999] bg-opacity-20 justify-center px-4 py-24 lg:px-0">
+      <section className="w-full flex flex-col bg-[#999999] bg-opacity-20 justify-center px-4 py-44 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
           <div className="flex justify-center w-full gap-8">
@@ -110,17 +110,23 @@ const Contactus = () => {
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
           <div className="flex justify-center items-center w-full gap-8">
-            <div className='flex justify-end w-7/8'>
+            <div className='flex flex-col justify-end w-full gap-4'>
 
-            <div className='text-4xl'>
+            <div className='text-4xl font-semibold text-secondary'>
+            Still cant find right 
+Properties?
+            </div>
+            <div className='text-secondaryLight max-w-sm text-xl'>
             Are you interested in a property or
             have any other inquiries?
             </div>
             </div>
-            <div className="w-2/3">
+            <div className="w-2/3 mt-3">
 
-            <div className='rounded-full w-48 h-48 flex justify-center items-center  border-2 border-gray-700'>
-            Contact Us
+            <div className='text-secondary'>A comprehensive and decidedly modern real estate theme we designed for all property showcase and real estate websites.</div>
+            <div className='flex w-full mt-4'>
+              <Input type='email' placeholder='Enter your email address' className='py-6 rounded-none !rounded-l focus-visible:ring-0 focus-visible:ring-offset-1 focus:border-none'/>
+              <Button className='!rounded-none !rounded-r'>Submit</Button>
             </div>
             </div>
             </div>

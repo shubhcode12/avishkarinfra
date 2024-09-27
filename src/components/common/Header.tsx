@@ -72,12 +72,8 @@ const isHomePage = router.pathname === '/'
                   <Link
                     key={item.name}
                     href={item.href}
-                    // className={classNames(
-                    //   current(item.href) ? 'underline text-white' : 'text-white hover:underline hover:text-white',
-                    //   `rounded-md px-3 py-2 text-sm font-medium ${isHomeRoute && isScrolled ? 'text-secondary' : 'text-white'}`,
-                    // )}
                     className={classNames(
-                      current(item.href) ? `${isHomePage && isScrolled ? 'text-white' : 'text-secondary'} ${textColorClass}` : `${textColorClass} ${hoverBackgroundClass}`,
+                      current(item.href) ? `${ isScrolled ? 'text-secondary' : 'text-white'} ${textColorClass}` : `${textColorClass} ${hoverBackgroundClass}`,
                       'rounded-md px-3 py-2 text-sm font-medium'
                     )}
                   >

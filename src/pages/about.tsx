@@ -43,9 +43,7 @@ const About = () => {
       <section className="w-full flex flex-col bg-secondary rounded-3xl justify-center px-4 py-24 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
-          <div>
-                    <Button>About Us</Button>
-                </div>
+         
           <StickyScrollRevealDemo/>
             {/* <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
             <div className="w-full flex flex-col gap-4">

@@ -20,7 +20,7 @@ export default function HeroWithOceanVideo() {
       <div className="absolute inset-0 bg-black bg-opacity-50 z-9"></div>
 
       <div className="absolute bottom-0 left-0 p-4">
-        <div className="relative z-20 text-start text-white px-4 py-6 max-w-4xl mx-auto">
+        <div className="relative z-9 text-start text-white px-4 py-6 max-w-4xl mx-auto">
           <p className="text-xl mb-4 font-light tracking-wide max-w-sm">
             Discover the Advantages of Eco-Friendly Homes with Our Real Estate
             Agency.
