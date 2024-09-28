@@ -3,9 +3,37 @@ import { CardHoverEffectDemo } from "../common/Goal";
 import { Button } from "../ui/button";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
+import { HoverEffect } from "../ui/card-hover-effect";
 const KeyPointsSection = () => {
+   const projects = [
+    {
+      title: "Modern, Eco-Friendly Homes",
+      description:
+        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+      link: "#",
+    },
+    {
+      title: "Prime City Locations",
+      description:
+        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+      link: "#",
+    },
+    {
+      title: "Community-Focused Living",
+      description:
+        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+      link: "#",
+    },
+    {
+      title: "Sustainable Architecture",
+      description:
+        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+      link: "#",
+    },
+  ];
+
   return (
-    <div className="mx-4">
+    <div className="mx-2">
       <section className="w-full flex py-24 justify-center px-4 lg:px-8 bg-secondary rounded-3xl hero-banner">
         <div className="flex justify-center w-full">
           <div className="px-4 w-full ">
@@ -23,7 +51,9 @@ const KeyPointsSection = () => {
               </div>
             </div>
             <div className="mt-12 lg:mt-16">
-              <CardHoverEffectDemo />
+            <div className="w-full">
+             <HoverEffect items={projects} />
+            </div>
             </div>
           </div>
         </div>
