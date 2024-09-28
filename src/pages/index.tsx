@@ -23,12 +23,8 @@ import Section5 from "@/components/Homesections/Section5";
 import Section6 from "@/components/Homesections/Section6";
 import Section7 from "@/components/Homesections/Section7";
 import Section8 from "@/components/Homesections/Section8";
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-);
 
 export default function Home() {
-  const [propertyType, setpropertyType] = useState("New to market");
   return (
     <div className="">
       <div className="fixed w-full z-10">
