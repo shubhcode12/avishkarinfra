@@ -5,7 +5,7 @@ import { common } from "../../../public/assets/icon";
 import Image from "next/image";
 const AboutHomeSection = () => {
   return (
-    <section className="w-full flex pt-24 justify-center px-4 lg:px-0 ">
+    <section className="w-full flex py-14 lg:py-24 justify-center px-4 lg:px-10 ">
       <div className="flex justify-center w-full">
         <div className="px-8 w-full">
           <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
