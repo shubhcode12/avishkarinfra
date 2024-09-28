@@ -160,7 +160,7 @@ export const Card = ({
   index,
   layout = false,
 }: {
-  card: Card;
+  card: any;
   index: number;
   layout?: boolean;
 }) => {
@@ -223,7 +223,7 @@ export const Card = ({
               </button>
              
               <div className="mt-12">
-                <Image src={Homescreen.home1} alt=""/>
+                <Image src={card.image.sizes.medium} alt=""/>
               </div>
             </motion.div>
           </div>
@@ -236,12 +236,12 @@ export const Card = ({
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         
-        {/* <BlurImage
-          src={card.src}
+        <BlurImage
+          src={card.image.sizes.medium}
           alt={card.title}
           fill
           className="object-cover absolute z-10 inset-0"
-        /> */}
+        />
       </motion.button>
       <div className="mt-4 pl-4 font-semibold text-xl">
 

@@ -1,10 +1,28 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel3";
  
 export function AppleCardsCarouselDemo() {
-  const cards = data.map((card, index) => (
+  const [projects, setProjects] = useState<any[]>([]); 
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Fetch data from your API
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects'); // adjust the path if needed
+        const data = await response.json();
+        setProjects(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+  const cards = projects.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
  
