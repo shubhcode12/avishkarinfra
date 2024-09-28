@@ -1,24 +1,13 @@
 import Navbar from "@/components/common/Navbar";
 import { AppleCardsCarouselDemo } from "@/components/common/Reviews";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
-import { useState } from "react";
 
 import Footer from "@/components/common/Footer";
 import HeroWithOceanVideo from "@/components/common/HeroVideo";
+import AboutHomeSection from "@/components/Homesections/AboutHomeSection";
 import ContactSection from "@/components/Homesections/ContactSection";
+import ExperienceSection from "@/components/Homesections/ExperienceSection";
 import Homefinal from "@/components/Homesections/Homefinal";
 import KeyPointsSection from "@/components/Homesections/KeyPointsSection";
-import AboutHomeSection from "@/components/Homesections/AboutHomeSection";
-import Section2 from "@/components/Homesections/Section2";
-import Section3 from "@/components/Homesections/Section3";
 import Section5 from "@/components/Homesections/Section5";
 import Section6 from "@/components/Homesections/Section6";
 import Section7 from "@/components/Homesections/Section7";
@@ -32,8 +21,7 @@ export default function Home() {
       </div>
       <HeroWithOceanVideo />
       <AboutHomeSection />
-      <Section2 />
-      <Section3 />
+      <ExperienceSection />
       <KeyPointsSection />
       <Section5 />
       <Section6 />
