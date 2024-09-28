@@ -44,7 +44,7 @@ import HeroWithOceanVideo from "@/components/common/HeroVideo";
 import Section1 from "@/components/Homesections/Section1";
 import Section2 from "@/components/Homesections/Section2";
 import Section3 from "@/components/Homesections/Section3";
-import Section4 from "@/components/Homesections/Section4";
+import KeyPointsSection from "@/components/Homesections/KeyPointsSection";
 import Section5 from "@/components/Homesections/Section5";
 import Section6 from "@/components/Homesections/Section6";
 import Section7 from "@/components/Homesections/Section7";
@@ -115,7 +115,7 @@ export default function Home() {
       <Section1/>
       <Section2/>
       <Section3/>
-      <Section4/>
+      <KeyPointsSection/>
       <Section5/>
       <Section6/>
       <Section7/>
