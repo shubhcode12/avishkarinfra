@@ -12,6 +12,7 @@ import RecentProjectSection from "@/components/Homesections/RecentProjectSection
 import PropertiesSection from "@/components/Homesections/PropertiesSection";
 import BlogSection from "@/components/Homesections/BlogSection";
 import FaqSection from "@/components/Homesections/FaqSection";
+import CTA from "@/components/common/CTA";
 
 export default function Home() {
   return (
@@ -32,7 +33,7 @@ export default function Home() {
       <FaqSection />
       <ContactSection />
       <Homefinal />
-
+      <CTA />
       <Footer />
     </div>
   );
