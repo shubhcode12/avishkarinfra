@@ -21,6 +21,8 @@ export default async function handler(
       address: project.acf.address,
       image: project.acf.image,
       gallery: project.acf.photo_gallery.gallery[0],
+      category: project.project_category,
+      tags: project.project_tag,
     }));
     res.status(200).json(projects);
   } catch (error) {
