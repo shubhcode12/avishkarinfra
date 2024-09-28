@@ -18,8 +18,8 @@ const FaqItem = ({
   answer: string;
 }) => (
   <AccordionItem value={question}>
-    <AccordionTrigger>{question}</AccordionTrigger>
-    <AccordionContent>{answer}</AccordionContent>
+    <AccordionTrigger className="text-start">{question}</AccordionTrigger>
+    <AccordionContent className="text-start">{answer}</AccordionContent>
   </AccordionItem>
 );
 
