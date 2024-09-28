@@ -8,7 +8,7 @@ import ContactSection from "@/components/Homesections/ContactSection";
 import ExperienceSection from "@/components/Homesections/ExperienceSection";
 import Homefinal from "@/components/Homesections/Homefinal";
 import KeyPointsSection from "@/components/Homesections/KeyPointsSection";
-import Section5 from "@/components/Homesections/Section5";
+import RecentProjectSection from "@/components/Homesections/RecentProjectSection";
 import Section6 from "@/components/Homesections/Section6";
 import Section7 from "@/components/Homesections/Section7";
 import Section8 from "@/components/Homesections/Section8";
@@ -23,7 +23,7 @@ export default function Home() {
       <AboutHomeSection />
       <ExperienceSection />
       <KeyPointsSection />
-      <Section5 />
+      <RecentProjectSection />
       <Section6 />
       <Section7 />
       <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] lg:bg-cover bg-contain bg-no-repeat">
