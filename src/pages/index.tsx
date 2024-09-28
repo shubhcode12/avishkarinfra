@@ -16,7 +16,7 @@ import HeroWithOceanVideo from "@/components/common/HeroVideo";
 import ContactSection from "@/components/Homesections/ContactSection";
 import Homefinal from "@/components/Homesections/Homefinal";
 import KeyPointsSection from "@/components/Homesections/KeyPointsSection";
-import Section1 from "@/components/Homesections/Section1";
+import AboutHomeSection from "@/components/Homesections/AboutHomeSection";
 import Section2 from "@/components/Homesections/Section2";
 import Section3 from "@/components/Homesections/Section3";
 import Section5 from "@/components/Homesections/Section5";
@@ -81,7 +81,7 @@ export default function Home() {
         <Navbar />
       </div>
       <HeroWithOceanVideo />
-      <Section1 />
+      <AboutHomeSection />
       <Section2 />
       <Section3 />
       <KeyPointsSection />
