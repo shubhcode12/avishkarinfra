@@ -23,16 +23,16 @@ const BlogSection = () => {
   return (
     <div>
       <section>
-        <section className="w-full flex py-28 justify-center px-4 lg:px-10">
+        <section className="w-full flex py-28 justify-center px-2 lg:px-10">
           <div className="flex justify-center w-full">
             <div className="px-8 w-full ">
               <div className="flex justify-center w-full">
                 <div className="flex flex-col w-full">
-                  <div className="flex justify-center text-5xl font-semibold">
+                  <div className="flex text-center justify-center text-5xl font-semibold">
                     Our latest news and articles.
                   </div>
 
-                  <div className="text-center text-[#596460] mt-4">
+                  <div className="text-center text-[#596460] mt-6">
                     Explore our latest news and articles to stay informed about<br/>
                     the latest trends and insights in the real estate market.
                   </div>
