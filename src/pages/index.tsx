@@ -11,7 +11,7 @@ import KeyPointsSection from "@/components/Homesections/KeyPointsSection";
 import RecentProjectSection from "@/components/Homesections/RecentProjectSection";
 import PropertiesSection from "@/components/Homesections/PropertiesSection";
 import BlogSection from "@/components/Homesections/BlogSection";
-import Section8 from "@/components/Homesections/Section8";
+import FaqSection from "@/components/Homesections/FaqSection";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
       <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] lg:bg-cover bg-contain bg-no-repeat">
         <AppleCardsCarouselDemo />
       </section>
-      <Section8 />
+      <FaqSection />
       <ContactSection />
       <Homefinal />
 
