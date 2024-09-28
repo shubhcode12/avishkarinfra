@@ -15,56 +15,54 @@ export const BentoGrid = ({
       className={cn(
         "grid md:auto-rows-[24rem] grid-cols-1 md:grid-cols-3 gap-4  mx-auto ",
         className
-      )}
-    >
+      )}>
       {children}
     </div>
   );
 };
-
 export const BentoGridItem = ({
   className,
   title,
   description,
-  header,
+  imageUrl,
   icon,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  header?: React.ReactNode;
+  imageUrl?: string | React.ReactNode;
   icon?: React.ReactNode;
 }) => {
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl group/bento !h-[30rem] hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-2xl group/bento h-fit hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent flex flex-col space-y-4",
         className
-      )}
-    >
-      {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {/* {icon} */}
-        <div className="font-sans font-bold text-primary hover:underline cursor-pointer dark:text-neutral-200 ">
-          {title}
-        </div>
-        <div className="text-secondaryLight">
-          {description}
-        </div>
-        <div className="flex justify-between">
-          <div className="text-secondary flex justify-start items-end font-semibold"><IconMapPinFilled className="text-primary mt-1" /> <span>{icon}</span></div>
-          <div>
-          <Button className="flex justify-center w-auto gap-2">
-                    <span>View</span>
-                    <span>
-                      <Image src={common.arrowCrossRight} alt="" />
-                    </span>
-                  </Button>
+      )}>
+      <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden">
+        <img 
+          className="absolute top-0 left-0 w-full h-full object-cover" 
+          src={imageUrl as string} 
+          alt="header" 
+        />
+      </div>
+      <div className="flex flex-col justify-between flex-grow">
+        <div className="group-hover/bento:translate-x-2 transition duration-200 space-y-2">
+          <div className="text-xl font-bold hover:underline cursor-pointer dark:text-neutral-200">
+            {title}
           </div>
+          <div className="text-secondaryLight">{description}</div>
         </div>
-        {/* <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-          {description}
-        </div> */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 space-y-2 sm:space-y-0">
+          <div className="text-secondary flex items-center font-semibold">
+            <IconMapPinFilled className="text-primary mr-1" />
+            <span className="text-sm">{icon}</span>
+          </div>
+          <Button className="flex justify-center items-center w-full sm:w-auto gap-2">
+            <span>View</span>
+            <Image src={common.arrowCrossRight} alt="" width={16} height={16} />
+          </Button>
+        </div>
       </div>
     </div>
   );
