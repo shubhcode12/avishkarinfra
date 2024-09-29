@@ -1,5 +1,5 @@
 import Navbar from "@/components/common/Navbar";
-import { AppleCardsCarouselDemo } from "@/components/common/Reviews";
+import { ReviewsSection } from "@/components/common/Reviews";
 
 import Footer from "@/components/common/Footer";
 import HeroWithOceanVideo from "@/components/common/HeroVideo";
@@ -27,9 +27,7 @@ export default function Home() {
       <RecentProjectSection />
       <PropertiesSection />
       <BlogSection />
-      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-cover bg-no-repeat">
-        <AppleCardsCarouselDemo />
-      </section>
+      <ReviewsSection />
       <FaqSection />
       <ContactSection />
       <Homefinal />
