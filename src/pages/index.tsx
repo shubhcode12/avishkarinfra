@@ -27,7 +27,7 @@ export default function Home() {
       <RecentProjectSection />
       <PropertiesSection />
       <BlogSection />
-      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] lg:bg-cover bg-contain bg-no-repeat">
+      <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-cover bg-no-repeat">
         <AppleCardsCarouselDemo />
       </section>
       <FaqSection />

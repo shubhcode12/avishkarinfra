@@ -5,7 +5,7 @@ const CTA = () => {
     <section className="w-full flex flex-col justify-center px-2 py-24 lg:px-10">
       <div className="flex justify-center w-full">
         <div className="px-8 w-full">
-          <div className="flex justify-center items-center w-full gap-8">
+          <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8">
             <div className="flex flex-col justify-end w-full gap-4">
               <div className="text-6xl font-semibold text-secondary max-w-lg">
                 Still cant find right Properties?
@@ -14,7 +14,7 @@ const CTA = () => {
                 Are you interested in a property or have any other inquiries?
               </div>
             </div>
-            <div className="w-2/3 mt-3">
+            <div className="w-full lg:w-2/3 mt-3">
               <div className="text-[#596460] text-lg">
                 Subscribe to our newsletter to get the latest news and updates
                 about our properties and services.

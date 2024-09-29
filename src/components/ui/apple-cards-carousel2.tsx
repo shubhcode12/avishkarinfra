@@ -191,7 +191,7 @@ export const Card = ({
   index,
   layout = false,
 }: {
-  card: Card;
+  card: any;
   index: number;
   layout?: boolean;
 }) => {
@@ -238,27 +238,27 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-48 w-56 md:h-[20rem] md:w-96 overflow-hidden flex flex-col items-start justify-start  z-10"
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-64 w-80 md:h-[20rem] md:w-96 overflow-hidden flex flex-col items-start justify-start  z-10"
       >
         <div className="absolute h-full top-0 inset-x-0  !z-8 pointer-events-none" />
         <div className="relative !z-8 p-8">
           
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-secondary text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] mt-4 font-sans "
+            className="text-secondary text-sm md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] mt-4 font-sans "
           >
             {card.title}
           </motion.p>
           <div className="flex justify-start items-center mt-1 gap-2">
             <div>
-            {card.rating} 
-            </div>
-            <div>
             {renderStars(card.rating)}
             </div>
             </div>
-            <div className="text-start mt-2">
-              {card.desc}
+            <div className="text-start text-xs mt-2 h-28">
+              {card.content}
+            </div>
+            <div className="flex w-full justify-end flex-1">
+              <div className="text-xs lg:text-base text-secondary font-semibold">- {card.author}</div>
             </div>
         </div>
         <BlurImage
