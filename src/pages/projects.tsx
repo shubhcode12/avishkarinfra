@@ -1,6 +1,7 @@
 import FeatureProjects from "@/components/common/FeaturedProjects";
 import Navbar from "@/components/common/Navbar";
 import { AppleCardsCarouselDemo } from "@/components/common/ProjectsCarousal";
+import PropertiesSection from "@/components/Homesections/PropertiesSection";
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -13,9 +14,7 @@ const Projects = () => {
           <div className="max-w-6xl w-full">
             <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
               <div className="flex flex-col w-full gap-8">
-                <div>
-                  <Button>Portfolio</Button>
-                </div>
+                
                 <div className="max-w-2xl text-6xl font-semibold leading-[70px] text-secondary">
                   Explore our diverse portfolio of exceptional properties
                 </div>
@@ -39,6 +38,7 @@ const Projects = () => {
           </div>
         </div>
       </section>
+      <PropertiesSection  show={false}/>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const CategoryButton = ({ category, selectedCategory, onClick }: any) => (
   </button>
 );
 
-const PropertiesSection = () => {
+const PropertiesSection = (data:{show:boolean}) => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
@@ -83,7 +83,8 @@ const PropertiesSection = () => {
                 Newest Deals <br /> For Your Needs.
               </div>
             </div>
-
+{
+  data.show && 
             <div className="flex flex-col lg:text-end lg:justify-end">
               <p className="text-lg text-[#596460] mb-4 max-w-2xl">
                 Discover a curated selection of meticulously crafted properties
@@ -95,8 +96,9 @@ const PropertiesSection = () => {
                 </button>
               </Link>
             </div>
-          </div>
+}
 
+          </div>
           {/* Category Buttons */}
           <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-scroll">
             {/* All Button */}

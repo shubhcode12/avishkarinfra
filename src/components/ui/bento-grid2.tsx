@@ -52,10 +52,10 @@ export const BentoGridItem = ({
       </div>
       <div className="flex flex-col justify-between flex-grow">
         <div className="group-hover/bento:translate-x-2 transition duration-200 space-y-2">
-          <div className="text-xl font-bold hover:underline cursor-pointer dark:text-neutral-200">
+          <div className="text-xl font-bold hover:underline cursor-pointer dark:text-neutral-200 line-clamp-1">
             {title}
           </div>
-          <div className="text-secondaryLight">{description}</div>
+          <div className="text-secondaryLight line-clamp-2">{description}</div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 space-y-2 sm:space-y-0">
           <div className="text-secondary flex items-center font-semibold">

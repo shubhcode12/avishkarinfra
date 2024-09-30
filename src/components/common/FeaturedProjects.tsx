@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
 
 const projects = [
   {
@@ -89,7 +90,7 @@ function ProjectCard({
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const zIndex = totalProjects + index;
-
+ const router = useRouter()
   return (
     <motion.div
       ref={cardRef}
@@ -104,7 +105,7 @@ function ProjectCard({
           <p className="text-xl text-gray-800">{project.name}</p>
           <p className="text-xl text-gray-800">{project.location}</p>
 
-          <button className="text-xl text-gray-800 hover:text-gray-800 transition-colors">
+          <button onClick={()=>router.push(`../projects/${project.id}`)} className="text-xl text-gray-800 hover:text-gray-800 transition-colors">
             View →
           </button>
         </div>

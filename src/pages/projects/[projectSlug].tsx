@@ -15,11 +15,15 @@ import ExploreProperties from "@/components/Projectsection/ExploreMore";
 
 const ProjectDetail = () => {
     const router = useRouter()
+    const [project, setProject] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const {projectSlug}= router.query
     const [formData, setFormData] = useState({
       name: "",
       phone: "",
       email: "",
-      projectName: "",
+      projectName: project?.title,
     });
     const [submitStatus, setSubmitStatus] = useState<string | null>(null);
   
@@ -49,7 +53,7 @@ const ProjectDetail = () => {
           const data = await response.json();
           setSubmitStatus("success");
           console.log("Form submitted successfully");
-          setFormData({ name: "", phone: "", email: "", projectName: "" });
+          setFormData({ name: "", phone: "", email: "", projectName: project.title });
         } else {
           setSubmitStatus("error");
           console.error("Form submission failed");
@@ -59,10 +63,6 @@ const ProjectDetail = () => {
         console.error("Error submitting form:", error);
       }
     };
-    const [project, setProject] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const {projectSlug}= router.query
     useEffect(() => {
         const fetchProjectData = async () => {
             try {
@@ -103,6 +103,9 @@ const ProjectDetail = () => {
   return (
     <div>
       <Navbar />
+      <div className="flex flex-col lg:flex-row justify-center px-8">
+        <div className="w-auto">
+
       <div className="flex justify-center w-full">
         <div className="px-8 w-full">
           <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
@@ -110,15 +113,26 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center w-full bg-[#999999] bg-opacity-20 py-10 lg:py-24">
-        <div className="px-8 w-2/3">
+      
+      <section className="w-full flex flex-col  justify-center px-4 lg:px-0">
+        <div className="flex justify-center w-full">
+          <div className=" w-full">
+          <ExploreProperties id={projectSlug}/>
+          </div>
+        </div>
+      </section>
+        </div>
+        <div className="w-1/3">
+
+      <div className="flex justify-center py-10 z-50 lg:fixed top-52 right-10 lg:-mt-3">
+        <div className="w-full">
           <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
-          <Card className="w-full py-10 flex items-center justify-center">
+          <Card className="w-full py-10 flex items-center justify-center shadow-lg">
       <CardContent className="w-full px-10">
         <form onSubmit={handleSubmit}>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex flex-col space-y-1.5 w-full lg:w-1/2">
+              <div className="flex flex-col space-y-1.5 w-full ">
                 <Label htmlFor="name">Full Name</Label>
                 <Input
                   id="name"
@@ -130,7 +144,8 @@ const ProjectDetail = () => {
                 />
               </div>
 
-              <div className="flex flex-col space-y-1.5 w-full lg:w-1/2">
+            </div>
+              <div className="flex flex-col space-y-1.5 w-full ">
                 <Label htmlFor="phone">Phone Number</Label>
                 <Input
                   id="phone"
@@ -141,7 +156,6 @@ const ProjectDetail = () => {
                   className="w-full"
                 />
               </div>
-            </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -178,13 +192,8 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-      <section className="w-full flex flex-col  justify-center px-4 lg:px-0">
-        <div className="flex justify-center w-full">
-          <div className=" w-full">
-          <ExploreProperties id={projectSlug}/>
-          </div>
         </div>
-      </section>
+      </div>
       <Footer />
     </div>
   );

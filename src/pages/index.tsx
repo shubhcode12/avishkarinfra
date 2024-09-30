@@ -23,7 +23,7 @@ export default function Home() {
       <ExperienceSection />
       <KeyPointsSection />
       <RecentProjectSection />
-      <PropertiesSection />
+      <PropertiesSection show={true} />
       <BlogSection />
       <ReviewsSection />
       <FaqSection />
