@@ -17,9 +17,7 @@ import CTA from "@/components/common/CTA";
 export default function Home() {
   return (
     <div className="">
-      <div className="fixed w-full z-10">
-        <Navbar />
-      </div>
+      <Navbar />
       <HeroWithOceanVideo />
       <AboutHomeSection />
       <ExperienceSection />

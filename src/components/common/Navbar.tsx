@@ -57,6 +57,7 @@ export default function Navbar() {
   });
 
   return (
+    <div className="fixed w-full z-20">
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 1, y: 0 }}
@@ -145,5 +146,6 @@ export default function Navbar() {
         </Disclosure>
       </motion.div>
     </AnimatePresence>
+    </div>
   );
 }

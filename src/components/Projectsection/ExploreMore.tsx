@@ -20,11 +20,10 @@ const CategoryButton = ({ category, selectedCategory, onClick }: any) => (
   </button>
 );
 
-const PropertiesSection = () => {
+const ExploreProperties = (data:{id:any}) => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [categories, setCategories] = useState<any[]>([]);
 
   useEffect(() => {
@@ -54,20 +53,9 @@ const PropertiesSection = () => {
     };
 
     fetchProjects();
-    fetchCategories();
   }, []);
 
-  const filterProjects = (categoryName: string) => {
-    setSelectedCategory(categoryName);
-    if (categoryName === "All") {
-      setFilteredProjects(projects);
-    } else {
-      const filtered = projects.filter(
-        (project) => project.category && project.category.includes(categoryName)
-      );
-      setFilteredProjects(filtered);
-    }
-  };
+  const filterProjects = projects.filter((item:any)=>item.id!=data.id).slice(0,3)
 
   return (
     <section className="w-full flex py-28 justify-center px-0 lg:px-10 bg-[#f7f7f7]">
@@ -77,44 +65,17 @@ const PropertiesSection = () => {
             <div className="flex flex-col lg:w-1/2">
               <div className="flex items-center">
                 <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
-                <span className="text-sm font-semibold">PROPERTIES</span>
+                <span className="text-sm font-semibold">MORE PROPERTIES</span>
               </div>
               <div className="text-4xl lg:text-6xl font-medium mt-4">
-                Newest Deals <br /> For Your Needs.
+                Explore Deals <br /> For Your Needs.
               </div>
             </div>
 
-            <div className="flex flex-col lg:text-end lg:justify-end">
-              <p className="text-lg text-[#596460] mb-4 max-w-2xl">
-                Discover a curated selection of meticulously crafted properties
-                that perfectly blend modern architecture with natural beauty.
-              </p>
-              <Link href="/properties">
-                <button className="bg-[#ef7f1a] text-white px-6 py-3 rounded-full w-fit self-end">
-                  View All Properties
-                </button>
-              </Link>
-            </div>
+           
           </div>
 
-          {/* Category Buttons */}
-          <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-scroll">
-            {/* All Button */}
-            <CategoryButton
-              category="All"
-              selectedCategory={selectedCategory}
-              onClick={filterProjects}
-            />
-            {/* Dynamic Category Buttons */}
-            {categories.map((category: any) => (
-              <CategoryButton
-                key={category.id}
-                category={category}
-                selectedCategory={selectedCategory}
-                onClick={filterProjects}
-              />
-            ))}
-          </div>
+          
 
           <div className="bg-gray-400 h-[0.5px] w-full mb-8"></div>
 
@@ -154,4 +115,4 @@ const PropertiesSection = () => {
   );
 };
 
-export default PropertiesSection;
+export default ExploreProperties;

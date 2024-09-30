@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FollowerPointerCard } from "../ui/following-pointer";
 import { aboutscreen } from "../../../public/assets/images";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function FollowingPointerDemo({ content }: { content: any }) {
   return (
@@ -40,9 +41,9 @@ export function FollowingPointerDemo({ content }: { content: any }) {
                   year: 'numeric'
                 })}
               </span>
-              <div className="relative z-10 px-6 py-2 bg-primary text-white font-bold rounded-xl block text-xs">
+              <Link href={`../blogs/${content.id.toString()}`} className="relative z-10 px-6 py-2 bg-primary text-white font-bold rounded-xl block text-xs">
                 Read More
-              </div>
+              </Link>
             </div>
           </div>
         </div>

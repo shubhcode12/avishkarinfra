@@ -3,6 +3,7 @@ import { Button } from "./button";
 import { IconClock, IconMapPinFilled } from "@tabler/icons-react";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
+import { useRouter } from "next/router";
 export const BentoGrid = ({
   className,
   children,
@@ -26,13 +27,16 @@ export const BentoGridItem = ({
   description,
   imageUrl,
   icon,
+  id,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   imageUrl?: string | React.ReactNode;
   icon?: React.ReactNode;
+  id:string
 }) => {
+  const router =useRouter()
   return (
     <div
       className={cn(
@@ -58,7 +62,7 @@ export const BentoGridItem = ({
             <IconMapPinFilled className="text-primary mr-1" />
             <span className="text-sm">{icon}</span>
           </div>
-          <Button className="flex justify-center items-center w-full sm:w-auto gap-2">
+          <Button onClick={()=>router.push(`../projects/${id}`)} className="flex justify-center items-center w-full sm:w-auto gap-2">
             <span>View</span>
             <Image src={common.arrowCrossRight} alt="" width={16} height={16} />
           </Button>
