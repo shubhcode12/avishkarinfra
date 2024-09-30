@@ -1,26 +1,11 @@
 import {
-  Card,
-  CardContent,
-  CardFooter
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
   IconClockFilled,
   IconLocationFilled,
   IconMapPinFilled,
-  IconPhoneFilled
+  IconPhoneFilled,
 } from "@tabler/icons-react";
 
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "../ui/button";
+import ContactForm from "../common/ContactForm";
 const ContactSection = () => {
   return (
     <section className="w-full flex pt-12 pb-24 justify-center px-2 lg:px-10">
@@ -28,68 +13,14 @@ const ContactSection = () => {
         <div className="px-8 w-full ">
           <div className="flex justify-center w-full gap-8">
             <div className="flex flex-col lg:flex-row w-full lg:gap-20">
-              <div className="w-full">
-                <Card className="w-full">
-                  <CardContent>
-                    <form>
-                      <div className="grid w-full items-center gap-4 mt-8">
-                        <div className="flex flex-col lg:flex-row gap-4">
-                          <div className="flex flex-col space-y-1.5">
-                            <Label htmlFor="name">Full Name</Label>
-                            <Input
-                              id="name"
-                              placeholder="Name of your project"
-                            />
-                          </div>
+              <ContactForm />
 
-                          <div className="flex flex-col space-y-1.5">
-                            <Label htmlFor="name">Phone Number</Label>
-                            <Input
-                              id="phone"
-                              placeholder="Enter Phone Number"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex flex-col space-y-1.5">
-                          <Label htmlFor="name">Email</Label>
-                          <Input id="name" type="email" placeholder="email" />
-                        </div>
-                        <div className="flex flex-col space-y-1.5">
-                          <Label htmlFor="name">
-                            What is your enquiry about?*
-                          </Label>
-                          <Select>
-                            <SelectTrigger id="framework">
-                              <SelectValue placeholder="Select" />
-                            </SelectTrigger>
-                            <SelectContent position="popper">
-                              <SelectItem value="next">Next.js</SelectItem>
-                              <SelectItem value="sveltekit">
-                                SvelteKit
-                              </SelectItem>
-                              <SelectItem value="astro">Astro</SelectItem>
-                              <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className="flex flex-col space-y-1.5">
-                          <Label htmlFor="name">Additional information</Label>
-                          <Textarea id="name" placeholder="Your message" />
-                        </div>
-                      </div>
-                    </form>
-                  </CardContent>
-                  <CardFooter className="flex justify-center lg:justify-start">
-                    <Button>Send Message</Button>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className="w-full">
+              <div className="w-full md:mt-10 lg:mt-0">
                 <div className="flex flex-col w-full gap-8">
-                  <div className="text-3xl font-semibold text-secondary">
-                    Get in touch to schedule a visit to your new house.
+                  <div className="text-6xl font-semibold text-secondary">
+                    Get in touch
                   </div>
-                  <div className="text-secondary">
+                  <div className="text-lg text-[#596460] max-w-lg">
                     Kindly fill this form with your details about your inquiries
                     and we would respond your inquiry shortly.
                   </div>
@@ -100,9 +31,9 @@ const ContactSection = () => {
                         <IconLocationFilled className="text-primary mt-1" />
                       </div>
                       <div>
-                        <div className="text-xl">Send an email</div>
+                        <div className="text-xl font-medium">Send an email</div>
                         <div className="text-primary">
-                          contact@ecohavenrealty.com
+                          contact@avishkarinfra.com
                         </div>
                       </div>
                     </div>
@@ -111,8 +42,10 @@ const ContactSection = () => {
                         <IconPhoneFilled className="text-primary mt-1" />
                       </div>
                       <div>
-                        <div className="text-xl">Give us a call</div>
-                        <div className="text-primary">+234905 121 8127</div>
+                        <div className="text-xl font-medium">
+                          Give us a call
+                        </div>
+                        <div className="text-primary">+91 7276080909</div>
                       </div>
                     </div>
                     <div className="flex justify-start items-start gap-2">
@@ -120,9 +53,12 @@ const ContactSection = () => {
                         <IconMapPinFilled className="text-primary mt-1" />
                       </div>
                       <div>
-                        <div className="text-xl">Office address</div>
+                        <div className="text-xl font-medium">
+                          Office address
+                        </div>
                         <div className="text-primary">
-                          11,Odo-Olowu, Ijeshatedo B/Stop, Surulere
+                          Office No.Fi 01 5th floor, Business Bay Building,
+                          Tarabai Park, Kolhapur
                         </div>
                       </div>
                     </div>
@@ -131,9 +67,9 @@ const ContactSection = () => {
                         <IconClockFilled className="text-primary mt-1" />
                       </div>
                       <div>
-                        <div className="text-xl">Working hours</div>
+                        <div className="text-xl font-medium">Working hours</div>
                         <div className="text-primary">
-                          Mon - Sat: 10am - 4pm
+                          Mon - Sat: 10am - 5pm
                         </div>
                       </div>
                     </div>

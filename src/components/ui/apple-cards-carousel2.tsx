@@ -125,7 +125,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -254,7 +254,7 @@ export const Card = ({
             {renderStars(card.rating)}
             </div>
             </div>
-            <div className="text-start text-xs mt-2 h-28">
+            <div className="text-start text-xs mt-5 h-28">
               {card.content}
             </div>
             <div className="flex w-full justify-end flex-1">
