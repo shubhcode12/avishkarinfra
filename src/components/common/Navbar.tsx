@@ -25,7 +25,7 @@ const navigation = [
   { name: "Projects", href: "/projects" },
   { name: "Blogs", href: "/blogs" },
   { name: "About", href: "/about" },
-  { name: "Contact Us", href: "contactus" },
+  { name: "Contact Us", href: "/contactus" },
 ];
 
 function classNames(...classes: any) {
