@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
+    <div className="px-4 lg:px-10">
+
     <div className="bg-secondary rounded-t-3xl  w-full">
       <div className="flex justify-center w-full p-10">
         <div className="max-w-6xl w-full ">
@@ -19,7 +21,7 @@ const Footer = () => {
                 prestigious and iconic projects in the city.
               </div>
             </div>
-            <div className="flex w-full gap-4 justify-evenly lg:gap-10">
+            <div className="flex flex-col lg:flex-row w-full gap-4 justify-evenly lg:gap-10">
               <div className="lg:w-full pt-4 flex flex-col gap-4">
                 <div className="text-white font-semibold text-xl">Contact</div>
                 <div className="text-white max-w-xs">
@@ -29,6 +31,8 @@ const Footer = () => {
                   info@avishkarinfra.com 7276080909
                 </div>
               </div>
+              <div className="flex justify-between flex-row w-full">
+
               <div className="lg:w-1/2 pt-4 flex flex-col justify-start items-start gap-4">
                 <div className="text-white font-semibold text-xl">Company</div>
                 <Link href={"/about"} className="text-white max-w-xs">
@@ -59,12 +63,13 @@ const Footer = () => {
                   Contact
                 </Link>
               </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="overflow-x-hidden w-full">
-    <div className="py-12 animate-marquee whitespace-nowrap ">
+    <div className=" py-0 lg:py-4 animate-marquee whitespace-nowrap ">
         <span className="mx-4 text-white text-4xl lg:text-7xl font-bold">GET IN TOUCH <span className="text-5xl lg:text-8xl font-bold text-primary">-</span></span>
         <span className="mx-4 text-white text-4xl lg:text-7xl font-bold">GET IN TOUCH <span className="text-5xl lg:text-8xl font-bold text-primary">-</span></span>
         <span className="mx-4 text-white text-4xl lg:text-7xl font-bold">GET IN TOUCH <span className="text-5xl lg:text-8xl font-bold text-primary">-</span></span>
@@ -124,6 +129,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

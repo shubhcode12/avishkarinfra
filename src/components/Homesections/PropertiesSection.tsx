@@ -100,7 +100,7 @@ const PropertiesSection = (data:{show:boolean}) => {
 
           </div>
           {/* Category Buttons */}
-          <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-scroll">
+          <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-x-auto">
             {/* All Button */}
             <CategoryButton
               category="All"
