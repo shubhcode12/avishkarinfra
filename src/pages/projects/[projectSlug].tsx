@@ -107,24 +107,18 @@ const ProjectDetail = () => {
         <div className="w-auto">
 
       <div className="flex justify-center w-full">
-        <div className="px-8 w-full">
+        <div className=" w-full">
           <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
             <TracingBeamDemo project={project}/>
           </div>
         </div>
       </div>
       
-      <section className="w-full flex flex-col  justify-center px-4 lg:px-0">
-        <div className="flex justify-center w-full">
-          <div className=" w-full">
-          <ExploreProperties id={projectSlug}/>
-          </div>
+      
         </div>
-      </section>
-        </div>
-        <div className="w-1/3">
+        <div className="lg:w-2/3 lg:mt-60">
 
-      <div className="flex justify-center py-10 z-50 lg:fixed top-52 right-10 lg:-mt-3">
+      <div className="flex justify-center">
         <div className="w-full">
           <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
           <Card className="w-full py-10 flex items-center justify-center shadow-lg">
@@ -194,6 +188,13 @@ const ProjectDetail = () => {
       </div>
         </div>
       </div>
+      <section className="w-full flex flex-col  justify-center px-4 lg:px-0">
+        <div className="flex justify-center w-full">
+          <div className=" w-full">
+          <ExploreProperties id={projectSlug}/>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );

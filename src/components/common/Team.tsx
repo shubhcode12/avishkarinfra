@@ -6,14 +6,13 @@ import { Carousel as Carousel2 } from "@/components/ui/apple-cards-carousel4";
  
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+    <Card title={card.title} key={card.src} card={card} index={index} />
   ));
  
   return (
     <div className="w-full h-full">
       
       <Carousel items={cards} />
-      <Carousel2 items={cards}/>
     </div>
   );
 }

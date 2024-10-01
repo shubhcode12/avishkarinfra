@@ -111,6 +111,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             )}
           >
             {items.map((item, index) => (
+              <div>
+
               <motion.div
                 initial={{
                   opacity: 0,
@@ -131,6 +133,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               >
                 {item}
               </motion.div>
+              
+              </div>
             ))}
           </div>
         </div>
@@ -149,6 +153,7 @@ export const Card = ({
   card: Card;
   index: number;
   layout?: boolean;
+  title:string;
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -188,10 +193,10 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-full bg-gray-100 dark:bg-neutral-900 h-40 w-40 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded bg-gray-100 dark:bg-neutral-900 h-80 w-80 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 p-8">
+        <div className="relative z-40 px-8">
           
         </div>
         <BlurImage
@@ -201,6 +206,7 @@ export const Card = ({
           className="object-cover absolute z-10 inset-0"
         />
       </motion.button>
+      <div className="mt-4 text-secondary font-semibold">{card.title}</div>
     </>
   );
 };
