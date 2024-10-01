@@ -5,44 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/router";
 
-const projects = [
-  {
-    id: "01",
-    name: "Nandini Jadhav",
-    location: "Kolhapur",
-    image: "https://i.postimg.cc/NfZLPZ9K/image.png",
-  },
-  {
-    id: "02",
-    name: "Green Valley Heights",
-    location: "Pune",
-    image: "https://i.postimg.cc/NfZLPZ9K/image.png",
-  },
-  {
-    id: "03",
-    name: "Riverside Residences",
-    location: "Mumbai",
-    image: "https://i.postimg.cc/NfZLPZ9K/image.png",
-  },
-  {
-    id: "04",
-    name: "Adhiraj Residency",
-    location: "Mumbai",
-    image: "https://i.postimg.cc/NfZLPZ9K/image.png",
-  },
-];
-
-const backgroundColors = [
-  "bg-red-100",
-  "bg-blue-100",
-  "bg-green-100",
-  "bg-yellow-100",
-  "bg-purple-100",
-  "bg-pink-100",
-  "bg-indigo-100",
-  "bg-teal-100",
-];
-
 function useSticky() {
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -69,11 +31,17 @@ function useSticky() {
 }
 
 function ProjectCard({
-  project,
+  id,
+  title,
+  address,
+  image,
   index,
   totalProjects,
 }: {
-  project: { id: string; name: string; location: string; image: string };
+  id: string;
+  title: string;
+  address: string;
+  image: string;
   index: number;
   totalProjects: number;
 }) {
@@ -90,30 +58,35 @@ function ProjectCard({
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const zIndex = totalProjects + index;
- const router = useRouter()
+  const router = useRouter();
   return (
     <motion.div
       ref={cardRef}
-      className={'mb-32 last:mb-0 sticky top-0 bg-white p-8 rounded-lg'}
+      className={"mb-32 last:mb-0 sticky top-0 bg-white rounded-lg"}
       style={{ zIndex }}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.2 }}>
-      <div className="flex flex-col items-center border-b-1 border-t border-gray-300">       
+      <div className="flex flex-col items-center mt-2 border-b-1 border-t border-gray-300">
         <div className="w-full flex justify-between mt-10 items-center mb-8">
-          <p className="text-xl text-gray-800">{project.id}</p>
-          <p className="text-xl text-gray-800">{project.name}</p>
-          <p className="text-xl text-gray-800">{project.location}</p>
+          <p className="text-sm lg:text-xl text-gray-800">{id}</p>
+          <p className="text-sm lg:text-xl text-gray-800">{title}</p>
+          <p className="text-sm lg:text-xl text-gray-800">{address}</p>
 
-          <button onClick={()=>router.push(`../projects/${project.id}`)} className="text-xl text-gray-800 hover:text-gray-800 transition-colors">
+          <button
+            onClick={() => router.push(`../projects/${id}`)}
+            className="text-sm lg:text-xl text-gray-800 hover:text-gray-800 transition-colors">
             View →
           </button>
         </div>
-        <motion.div ref={ref} className="w-full mt-4 overflow-hidden" style={{ y }}>
+        <motion.div
+          ref={ref}
+          className="w-full mt-4 overflow-hidden"
+          style={{ y }}>
           <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-auto object-cover mt-4"
+            src={image}
+            alt={title}
+            className="w-full aspect=[4/3] object-cover mt-0"
           />
         </motion.div>
       </div>
@@ -123,26 +96,41 @@ function ProjectCard({
 
 export default function FeatureProjects() {
   const [stickyRef, isSticky] = useSticky();
+  const [projects, setProjects] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Add smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-    
-    // Clean up
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("/api/projects");
+        const data = await response.json();
+        setProjects(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+
     return () => {
-      document.documentElement.style.scrollBehavior = 'smooth';
+      document.documentElement.style.scrollBehavior = "smooth";
     };
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 ">
+    <div className="w-full mx-auto px-0">
       <div className="border-b-1 border-t border-gray-600"></div>
-      <div className="grid grid-cols-12 gap-0 mb-16 mt-8">      
-        <div className="col-span-6">
-          <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
+      <div className="flex flex-col lg:flex-row w-full mt-8 gap-8 mb-8">
+        <div className="flex flex-col lg:w-1/2">
+          <div className="text-3xl font-medium mt-4">FEATURED PROJECTS</div>
         </div>
-        <div className="col-span-6">
-          <p className="text-2xl text-[#0e0f23]">
+
+        <div className="flex flex-col lg:text-end lg:justify-end">
+          <p className="text-lg text-[#0e0f23] mb-4 max-w-2xl">
             Our developments span across the city, blending timeless design with
             comfortable living spaces for every lifestyle.
           </p>
@@ -152,7 +140,10 @@ export default function FeatureProjects() {
         {projects.map((project, index) => (
           <ProjectCard
             key={project.id}
-            project={project}
+            id={project.id}
+            title={project.title}
+            address={project.address}
+            image={project.image.url}
             index={index}
             totalProjects={projects.length}
           />
