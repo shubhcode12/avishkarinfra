@@ -1,9 +1,8 @@
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import axios from "axios";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
@@ -34,7 +33,6 @@ const blogSlug = () => {
           categories: response?.data?.categories,
           tags: response?.data?.tags,
           class_list: response?.data?.class_list,
-          // acf: response?.data?.acf || null, // if no acf field is available, default to null
         };
         setpost(fetchedPosts);
         console.log("fetched posts : " + fetchedPosts);
@@ -50,37 +48,45 @@ const blogSlug = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="flex flex-col items-center justify-center w-full pt-28">
-        <div className="w-full flex justify-center items-center">
-          <div className="max-w-4xl">
-            <div className="text-6xl font-semibold text-center">
-              {post?.title}
+      <section className="w-full flex py-14 pt-28 lg:pt-40 justify-center px-4 lg:px-10 ">
+        <div className="flex justify-center w-full">
+          <div className="px-8 w-full">
+            <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
+              <div className="flex flex-col w-full">
+                <div className="text-4xl lg:text-5xl font-medium mt-4">
+                  {post?.title}
+                </div>
+                <div className="flex flex-row gap-8 py-6">
+                  <div className="flex items-center mt-3">
+                    <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
+                    <span className="text-sm font-semibold">
+                      {post?.categories}
+                    </span>
+                  </div>
+                  <div className="flex items-center mt-3">
+                    <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
+                    <span className="text-sm font-semibold">{post?.date}</span>
+                  </div>
+                </div>
+
+                <div className="p-0 text-secondary font-semibold">
+                  <Markdown rehypePlugins={[rehypeRaw]}>
+                    {post?.content}
+                  </Markdown>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 h-auto">
+                <img
+                  src={post?.featured_media_src_url}
+                  className="w-full h-auto rounded-lg"
+                  alt={post?.title}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-full">
-          <Image
-            src={post?.featured_media_src_url}
-            className="w-full"
-            alt=""
-            width={100}
-            height={100}
-          />
-        </div>
-        <div className="p-8">
-          <div className="flex w-full justify-center gap-4">
-            {post?.tags?.map((item: any) => (
-              <div className="bg-[#666666]  text-white rounded p-1">
-                <span className="font-bold"># </span>
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="p-8 text-secondary font-semibold">
-          <Markdown rehypePlugins={[rehypeRaw]}>{post?.content}</Markdown>
-        </div>
-      </div>
+      </section>
+
       <Footer />
     </div>
   );
