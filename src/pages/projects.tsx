@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <div>
       <Navbar />
-      <section className="w-full flex flex-col pt-24 justify-center px-4 lg:px-0">
+      {/* <section className="w-full flex flex-col pt-24 justify-center px-4 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
             <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
@@ -30,10 +30,10 @@ const Projects = () => {
         <div className="pt-12">
           <AppleCardsCarouselDemo />
         </div>
-      </section>
-      <section className="w-full flex flex-col  justify-center px-4 lg:px-0">
-        <div className="flex justify-center w-full">
-          <div className="max-w-6xl w-full">
+      </section> */}
+      <section className="w-full flex flex-col pt-40 justify-center px-2 lg:px-10">
+        <div className="flex px-6 justify-center w-full">
+          <div className="w-full">
             <FeatureProjects/>
           </div>
         </div>
