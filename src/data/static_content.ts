@@ -1,5 +1,4 @@
-
-const faqData = [
+export const faqData = [
     {
       question:
         "What makes EcoHaven Realty different from other real estate agencies?",
@@ -25,7 +24,18 @@ const faqData = [
       question: "Are eco-friendly properties more expensive?",
       answer:
         "Not necessarily. While some eco-friendly features may require an initial investment, such as solar panels or energy-efficient systems, they can ultimately lead to long-term cost savings on utility bills. Additionally, there are often government incentives and tax breaks available for eco-friendly properties and features.",
-  },
+    },
 ];
 
-export default faqData;
+export const contactus = {
+  email : ["infra.avishkar@gmail.com", "contact@avishkarinfra.com"],
+  phone : ["7276080909", "9322102323"],
+  address : "Business Bay Building, Avishkar Infra, Tarabai Park, Kolhapur",
+}
+
+export const sociallinks = {
+  facebook : "https://www.facebook.com/avishkarinfra",
+  instagram : "https://www.instagram.com/avishkarinfra",
+  youtube : "https://www.youtube.com/@AvishkarInfra",
+  linkedin : "https://www.linkedin.com/company/avishkar-infra/"
+}
