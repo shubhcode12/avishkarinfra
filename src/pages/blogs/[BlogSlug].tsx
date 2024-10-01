@@ -14,7 +14,7 @@ const blogSlug = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchPostData = async () => {
-        try {
+        try {            
             const response = await axios.get(
                 `https://avishkar.giantwheeltech.com/wp-json/wp/v2/posts/${blogSlug}`
             );
@@ -37,6 +37,7 @@ const blogSlug = () => {
               // acf: response?.data?.acf || null, // if no acf field is available, default to null
             };
             setpost(fetchedPosts);
+            console.log("fetched posts : " + fetchedPosts)
           } catch (error) {
             console.error("Error fetching posts:", error);
           } finally {
