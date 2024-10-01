@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import faqData from "@/data/static_content";
+import { faqData } from "@/data/static_content";
 
 const FaqItem = ({
   question,
