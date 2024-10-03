@@ -1,176 +1,107 @@
-import Navbar from "@/components/common/Navbar";
-import React from "react";
-import { common } from "../../public/assets/icon";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { aboutscreen, Homescreen } from "../../public/assets/images";
-import { AppleCardsCarouselDemo } from "@/components/common/Team";
-import { StickyScrollRevealDemo } from "@/components/common/Sticky";
-import { useRouter } from "next/router";
 import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
+import { AppleCardsCarouselDemo } from "@/components/common/Team";
 import TextRevealByWord from "@/components/ui/TextReveal";
+import Image from "next/image";
+import avishkarFounder from "../../public/assets/images/about/avishkarFounder.jpeg";
+import FaqSection from "@/components/Homesections/FaqSection";
 const About = () => {
-  const router = useRouter();
   return (
     <div>
       <Navbar />
-      <section className="w-full flex py-14 pt-28 lg:pt-40 justify-center px-4 lg:px-10 ">
-        <div className="flex px-8 justify-center w-full">
-          <div className=" w-full ">
-            {/* <TextRevealByWord text="Welcome to Avishkar Infra! Best builders and developers in Kolhapur"/> */}
-            {/* <div className="flex flex-col gap-8">
-              <div className="flex">
-                <div className="w-full flex flex-col justify-evenly">
-                  <div className="text-secondary font-semibold text-6xl">
-                    About Avishkar Infra
-                  </div>
-                  <div>
-                    Founded on a shared vision of redefining the real estate
-                    experience, Citadel emerged from a passion for creating
-                    lasting connections between people and their ideal living
-                    spaces.
-                  </div>
-                  <div className="flex justify-start items-end">
-                    <Button
-                      onClick={() => router.push("/contactus")}
-                      className="flex justify-center gap-2">
-                      <span>Contact us</span>
-                      <span>
-                        <Image src={common.arrowCrossRight} alt="" />
-                      </span>
-                    </Button>
-                  </div>
+      <section className="w-full flex py-28 justify-center px-0 lg:px-10">
+        <div className="flex justify-center w-full">
+          <div className="px-8 w-full">
+            <div className="w-full">
+              <TextRevealByWord text="Avishkar Infra is a distinguished name among real estate builders in Kolhapur, and it is known for spearheading numerous prestigious and iconic projects in the city. Our vision to exceed and our passion to excel drive us to push boundaries and set new standards in the industry." />
+            </div>
+
+            <div className="flex flex-col-reverse lg:flex-row justify-center py-32 w-full gap-8 bg-white">
+              <div className="flex flex-col w-full gap-8">
+                <div className="flex items-center">
+                  <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
+                  <span className="text-sm font-semibold">OUR FOUNDER</span>
                 </div>
-                <div className="w-full">
-                  <Image src={Homescreen.property1} alt="" />
+                <div className="text-4xl lg:text-5xl font-medium">
+                  The Visionary Behind Avishkar Infra
                 </div>
-              </div>
-              <div className="flex w-full justify-center">
-                <div className="">
-                  <Image
-                    src={Homescreen.property1}
-                    className="w-auto h-72"
-                    alt=""
-                  />
+                <div className="text-lg text-[#596460] pr-8">
+                  Avishkar Infra was founded on a bold vision and passion for
+                  creating exceptional living spaces. Our founder, Mr. Avinash
+                  Jadhav, aimed to transform Kolhapur's landscape with projects
+                  showcasing quality, innovation, and trust. With industry
+                  experience, he pushed boundaries, setting a new standard for
+                  regional real estate development. From humble beginnings, Mr.
+                  Jadhav crafted iconic developments redefining Kolhapur's
+                  luxury and lifestyle. Excellence and community-first thinking
+                  drive every project.
                 </div>
-              </div>
-            </div> */}
-          </div>
-        </div>
-      </section>
-      <section className="w-full bg-[#f7f7f7] flex pt-32 pb-24 justify-center px-4 lg:px-0">
-        <div className="flex px-8 justify-center w-full">
-          <div className=" w-full ">
-            <div className="flex flex-col gap-8">
-              <div className="text-4xl text-secondary font-semibold">
-                About Avishkar Infra
-              </div>
-              <div className="flex flex-col-reverse lg:flex-row gap-4 justify-center items-center">
-                <div className="w-full">
-                  <div>
-                    <Image
-                      src={Homescreen.property1}
-                      className="w-auto h-[30rem]"
-                      alt=""
-                    />
-                  </div>
+                <div className="bg-gray-400 h-[0.5px] w-full my-2"></div>
+
+                <div className="text-lg text-secondary pr-8">
+                  <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+                  To become the most trusted and innovative real estate
+                  developer in Kolhapur, setting new standards of excellence by
+                  delivering premium-quality projects that enhance the city’s
+                  landscape and enrich the lives of its residents.
                 </div>
-                <div className="w-full">
-                  Avishkar Infra is a distinguished name among real estate
-                  builders in Kolhapur, and it is known for spearheading
-                  numerous prestigious and iconic projects in the city. Our
-                  vision to exceed and our passion to excel drive us to push
-                  boundaries and set new standards in the industry. As the
-                  leading builders in Kolhapur, we leverage our extensive
-                  experience and deep knowledge to develop premium, high-quality
-                  real estate projects.
+                <div className="text-lg text-secondary pr-8">
+                  <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+                  Our mission is to create high-quality, sustainable living
+                  spaces that combine luxury with functionality. We aim to
+                  exceed client expectations with every project by leveraging
+                  cutting-edge construction techniques, fostering strong
+                  relationships, and delivering homes that blend modern comfort
+                  with community values. Our commitment is to positively impact
+                  Kolhapur through transformative developments while maintaining
+                  an unwavering focus on quality, trust, and environmental
+                  responsibility.
                 </div>
               </div>
-              <div className="flex flex-col lg:flex-row-reverse  gap-4 justify-center items-center">
-                <div className="w-full">
-                  <div className="">
-                    <Image
-                      src={Homescreen.property1}
-                      className="w-auto h-[30rem]"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="w-full">
-                  <div className="text-4xl text-secondary font-semibold">
-                    Vision & Mission
-                  </div>
-                  To set new benchmarks in the real estate industry by
-                  continuously pushing boundaries, delivering innovative,
-                  premium-quality projects, and shaping the future skyline of
-                  Kolhapur.
-                </div>
+              <div className="w-full ">
+                <img
+                  src={avishkarFounder.src}
+                  className="w-full h-1/2 object-cover rounded-2xl aspect-video"
+                  alt=""
+                />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="w-full  flex pt-32 pb-24 justify-center px-4 lg:px-0">
-        <div className="flex px-8 justify-center w-full">
-          <div className=" w-full ">
-            <div className="flex flex-col gap-8">
-              <div className="flex gap-8">
-                <div className="w-full text-4xl font-semibold">
-                  <div className="text-center"> Our Services </div>{" "}
-                  <div className="w-48 bg-primary h-22"></div>
-                </div>
+
+            <section className="w-full flex flex-col justify-center">
+              <div className="flex justify-center w-full">
                 <div className="w-full">
-                  <div className="text-xl">Commercial Real Estate</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">Relocation Services</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">Property Management</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">Investment Properties</div>
-                </div>
-                <div className="w-full">
-                  <div className="text-xl">Home Inspections</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">Interior Design</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">New Construction</div>
-                  <div className="w-full my-5 h-[0.5px] bg-secondary"></div>
-                  <div className="text-xl">Land Acquisition</div>
+                  <div className="flex flex-col lg:flex-row w-full gap-8 mb-8">
+                    <div className="flex flex-col lg:w-1/2">
+                      <div className="flex items-center">
+                        <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
+                        <span className="text-sm font-semibold">OUR TEAM</span>
+                      </div>
+                      <div className="text-4xl lg:text-6xl font-medium mt-4">
+                        Who drives the Avishkar Infra
+                      </div>
+                    </div>
+                    <div className="flex flex-col lg:text-end lg:justify-end">
+                      <p className="text-lg text-[#596460] mb-4 max-w-2xl">
+                        Get to know the dedicated professionals behind Avishkar Infrs
+                        who are committed to helping you navigate the real
+                        estate market with confidence
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+              <div className="w-full">
+                <AppleCardsCarouselDemo />
+              </div>
+            </section>
           </div>
         </div>
       </section>
 
-      <section className="w-full bg-[#666666] bg-opacity-20 flex flex-col justify-center px-4 pt-24 lg:px-0">
+      {/* <section className="w-full flex flex-col justify-center px-4 pt-24 lg:px-0">
         <div className="flex justify-center w-full">
           <div className="max-w-6xl w-full">
             <div className="flex flex-col gap-8">
-              <div className="flex justify-start">
-                <Button className="bg-white text-secondary border-primary border-2 hover:text-white">
-                  Our Team
-                </Button>
-              </div>
-              <div className="text-start text-secondary font-semibold text-3xl">
-                Who drives the Avishkar
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="bg-[#666666] bg-opacity-20">
-        <AppleCardsCarouselDemo />
-      </div>
-      <section className="w-full flex flex-col justify-center px-4 pt-24 lg:px-0">
-        <div className="flex justify-center w-full">
-          <div className="max-w-6xl w-full">
-            <div className="flex flex-col gap-8">
-              {/* <div className="flex justify-start">
-                <Button className="bg-white text-secondary border-primary border-2 hover:text-white">
-                  Our Team
-                </Button>
-              </div> */}
               <div className="text-start max-w-3xl text-primary font-semibold text-4xl">
                 Welcome to Avishkar Infra! Best builders and developers in
                 Kolhapur
@@ -207,7 +138,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <FaqSection />
       <Footer />
     </div>
   );
