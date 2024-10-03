@@ -22,8 +22,8 @@ const RecentProjectSection = () => {
             <div>
               <div className="flex flex-col lg:flex-row gap-8">
                 <div className="w-full flex flex-col gap-8">
-                  <div>
-                    <Image src={Homescreen.property1} className="h-72" alt="" />
+                  <div className="rounded-[2.8rem]">
+                    <Image src={Homescreen.lobby} className="h-72 rounded-[2.8rem] object-cover" alt="" />
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="bg-primary text-white rounded-[2.8rem] flex flex-col gap-4 p-8">
@@ -37,8 +37,8 @@ const RecentProjectSection = () => {
                     </div>
                     <div>
                       <Image
-                        src={Homescreen.property1}
-                        className="h-72"
+                        src={Homescreen.gate}
+                        className="h-72 rounded-[2.8rem] object-cover"
                         alt=""
                       />
                     </div>
@@ -48,15 +48,15 @@ const RecentProjectSection = () => {
                   <div className=" w-full rounded-[2.8rem] group/card h-full">
                     <div
                       className={
-                        " cursor-pointer overflow-hidden relative card h-full rounded-[2.8rem] w-full backgroundImage flex flex-col justify-between p-4 bg-[url('../../public/assets/images/home/property2.png')] bg-cover"
+                        " cursor-pointer overflow-hidden relative card h-full rounded-[2.8rem] w-full backgroundImage flex flex-col justify-between p-4 bg-[url('../../public/assets/images/birdeye.jpg')] bg-cover "
                       }>
                       <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black rounded-[2.8rem] opacity-60"></div>
                       <div></div>
-                      <div className="text content">
-                        <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
+                      <div className="text content pl-6 pb-4">
+                        <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative z-10">
                           Aapal Ghar
                         </h1>
-                        <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
+                        <p className="font-normal text-sm text-gray-50 relative z-10 my-2">
                           Behind Sankalp Siddhi Karyalay, Puikhadi, Kolhapur
                         </p>
                       </div>

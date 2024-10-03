@@ -5,6 +5,8 @@ import property1 from "./images/home/property1.png"
 import property2 from "./images/home/property2.png"
 import aboutHero from "./images/about/hero.png"
 import logofooter from  "./images/logofooter.png"
+import lobby from "./images/lobby.jpg"
+import gate from "./images/gate.jpg";
 export const logo = {
     headerlogo,
     logofooter,
@@ -14,7 +16,9 @@ export const logo = {
   export const Homescreen={
     home1,
     property1,
-    property2
+    property2,
+    lobby,
+    gate
   }
 
   export const aboutscreen={
