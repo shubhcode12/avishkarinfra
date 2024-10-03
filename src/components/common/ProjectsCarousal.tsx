@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel3";
+// import { Carousel, Card } from "@/components/ui/apple-cards-carousel3";
  
 export function AppleCardsCarouselDemo() {
   const [projects, setProjects] = useState<any[]>([]); 
@@ -23,13 +23,14 @@ export function AppleCardsCarouselDemo() {
     fetchProjects();
   }, []);
   const cards = projects.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+    // <Card key={card.src} card={card} index={index} />
+    <></>
   ));
  
   return (
     <div className="w-full h-full py-20">
       
-      <Carousel items={cards} />
+      {/* <Carousel items={cards} /> */}
     </div>
   );
 }
