@@ -1,20 +1,15 @@
 "use client";
+import { useOutsideClick } from "@/data/hooks/useOutsideClick";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import Image, { ImageProps } from "next/image";
 import React, {
+  createContext,
+  useContext,
   useEffect,
   useRef,
   useState,
-  createContext,
-  useContext,
 } from "react";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  IconX,
-} from "@tabler/icons-react";
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Image, { ImageProps } from "next/image";
-import { useOutsideClick } from "@/data/hooks/useOutsideClick";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -25,7 +20,6 @@ type Card = {
   src: string;
   title: string;
   category: string;
-  content: React.ReactNode;
 };
 
 export const CarouselContext = createContext<{
@@ -88,59 +82,50 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   return (
     <>
-  
-    <CarouselContext.Provider
-      value={{ onCardClose: handleCardClose, currentIndex }}
-    >
-      <div className="relative w-full">
-        <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
-          ref={carouselRef}
-          onScroll={checkScrollability}
-        >
+      <CarouselContext.Provider
+        value={{ onCardClose: handleCardClose, currentIndex }}>
+        <div className="relative w-full">
           <div
-            className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
-            )}
-          ></div>
+            className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+            ref={carouselRef}
+            onScroll={checkScrollability}>
+            <div
+              className={cn(
+                "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              )}></div>
 
-          <div
-            className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              "max-w-6xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
-            )}
-          >
-            {items.map((item, index) => (
-              <div>
-
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
-                }}
-                key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
-              >
-                {item}
-              </motion.div>
-              
-              </div>
-            ))}
+            <div
+              className={cn(
+                "flex flex-row justify-start gap-4 pl-4",
+                "max-w-6xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
+              )}>
+              {items.map((item, index) => (
+                <div>
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.5,
+                        delay: 0.2 * index,
+                        ease: "easeOut",
+                        once: true,
+                      },
+                    }}
+                    key={"card" + index}
+                    className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl">
+                    {item}
+                  </motion.div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        
-      </div>
-    </CarouselContext.Provider>
+      </CarouselContext.Provider>
     </>
   );
 };
@@ -153,7 +138,7 @@ export const Card = ({
   card: Card;
   index: number;
   layout?: boolean;
-  title:string;
+  title: string;
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -189,16 +174,12 @@ export const Card = ({
 
   return (
     <>
-     
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded bg-gray-100 dark:bg-neutral-900 h-80 w-80 overflow-hidden flex flex-col items-start justify-start relative z-10"
-      >
+        className="rounded bg-gray-100 dark:bg-neutral-900 h-80 w-80 overflow-hidden flex flex-col items-start justify-start relative z-10">
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 px-8">
-          
-        </div>
+        <div className="relative z-40 px-8"></div>
         <BlurImage
           src={card.src}
           alt={card.title}
@@ -206,7 +187,10 @@ export const Card = ({
           className="object-cover absolute z-10 inset-0"
         />
       </motion.button>
-      <div className="mt-4 text-secondary font-semibold">{card.title}</div>
+      <div className="flex flex-col mt-4">
+        <div className="text-secondary text-lg font-semibold">{card.title}</div>
+        <div className="text-secondary ">{card.category}</div>
+      </div>
     </>
   );
 };

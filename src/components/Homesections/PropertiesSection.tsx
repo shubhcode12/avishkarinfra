@@ -1,7 +1,6 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid2";
-import Image from "next/image";
-import Link from "next/link";
 
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
@@ -20,7 +19,7 @@ const CategoryButton = ({ category, selectedCategory, onClick }: any) => (
   </button>
 );
 
-const PropertiesSection = (data:{show:boolean}) => {
+const PropertiesSection = (data: { show: boolean }) => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
@@ -83,21 +82,20 @@ const PropertiesSection = (data:{show:boolean}) => {
                 Newest Deals <br /> For Your Needs.
               </div>
             </div>
-{
-  data.show && 
-            <div className="flex flex-col lg:text-end lg:justify-end">
-              <p className="text-lg text-[#596460] mb-4 max-w-2xl">
-                Discover a curated selection of meticulously crafted properties
-                that perfectly blend modern architecture with natural beauty.
-              </p>
-              <Link href="/properties">
-                <button className="bg-[#ef7f1a] text-white px-6 py-3 rounded-full w-fit self-end">
-                  View All Properties
-                </button>
-              </Link>
-            </div>
-}
-
+            {data.show && (
+              <div className="flex flex-col lg:text-end lg:justify-end">
+                <p className="text-lg text-[#596460] mb-4 max-w-2xl">
+                  Discover a curated selection of meticulously crafted
+                  properties that perfectly blend modern architecture with
+                  natural beauty.
+                </p>
+                <Link href="/properties">
+                  <button className="bg-[#ef7f1a] text-white px-6 py-3 rounded-full w-fit self-end">
+                    View All Properties
+                  </button>
+                </Link>
+              </div>
+            )}
           </div>
           {/* Category Buttons */}
           <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-x-auto">
