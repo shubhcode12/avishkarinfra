@@ -67,7 +67,7 @@ const blogs = () => {
     <div>
       <Navbar/>
       <section>
-        <section className="w-full flex py-28 justify-center px-2 lg:px-10">
+        <section className="w-full flex pt-36 py-28 justify-center px-2 lg:px-10">
           <div className="flex justify-center w-full">
             <div className="px-8 w-full ">
               <div className="flex justify-center w-full">
