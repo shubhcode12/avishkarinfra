@@ -3,6 +3,7 @@ import React from "react";
 import { Homescreen } from "../../../public/assets/images";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
+import Link from "next/link";
 const AboutHomeSection = () => {
   return (
     <section className="w-full flex py-14 lg:py-24 justify-center px-4 lg:px-10 ">
@@ -46,12 +47,14 @@ const AboutHomeSection = () => {
                 Kolhapur.
               </div>
               <div>
+                <Link href="/about">                
                 <Button className="flex justify-center gap-2">
                   <span>Our Company</span>
                   <span>
                     <Image src={common.arrowCrossRight} alt="" />
                   </span>
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="w-full ">
