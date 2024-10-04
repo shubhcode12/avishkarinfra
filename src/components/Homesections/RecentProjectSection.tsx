@@ -54,10 +54,10 @@ const RecentProjectSection = () => {
                       <div></div>
                       <div className="text content pl-6 pb-4">
                         <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative z-10">
-                          Aapal Ghar
+                          Padma Veera City
                         </h1>
                         <p className="font-normal text-sm text-gray-50 relative z-10 my-2">
-                          Behind Sankalp Siddhi Karyalay, Puikhadi, Kolhapur
+                          Jaysingpur
                         </p>
                       </div>
                     </div>
