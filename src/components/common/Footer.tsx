@@ -30,7 +30,10 @@ const Footer = () => {
                     Kolhapur
                   </div>
                   <div className="text-white max-w-xs">
-                    info@avishkarinfra.com 7276080909
+                    info@avishkarinfra.com
+                  </div>
+                  <div className="text-white max-w-xs">
+                    7276080909
                   </div>
                 </div>
                 <div className="flex justify-between flex-row w-full">
