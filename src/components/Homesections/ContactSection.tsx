@@ -12,7 +12,7 @@ const ContactSection = () => {
       <div className="flex justify-center w-full">
         <div className="px-8 w-full ">
           <div className="flex justify-center w-full gap-8">
-            <div className="flex flex-col lg:flex-row w-full lg:gap-20">
+            <div className="flex flex-col lg:flex-row w-full gap-8 lg:gap-20">
               <ContactForm />
 
               <div className="w-full md:mt-10 lg:mt-0">
