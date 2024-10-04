@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
 import { HoverEffect } from "../ui/card-hover-effect";
+import Link from "next/link";
 const KeyPointsSection = () => {
    const projects = [
     {
@@ -42,12 +43,14 @@ const KeyPointsSection = () => {
                 Where Innovation, Sustainability, and Community Meet
               </div>
               <div className="flex justify-start w-full lg:w-auto">
+              <Link href="/projects">            
                 <Button className="flex justify-center w-auto gap-2">
                   <span>View All Properties</span>
                   <span>
                     <Image src={common.arrowCrossRight} alt="" />
                   </span>
                 </Button>
+                </Link>
               </div>
             </div>
             <div className="mt-12 lg:mt-16">
