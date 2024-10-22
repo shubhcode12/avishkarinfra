@@ -7,6 +7,8 @@ import Affordable_Flats from "../../public/assets/images/services/Affordable_Fla
 import Luxury_flats from "../../public/assets/images/services/Luxury_flats.jpg";
 import Farm_House from "../../public/assets/images/services/Farm_House.jpg";
 import Commercial_Spaces from "../../public/assets/images/services/Commercial_Spaces.jpg";
+import TypingEffect from "@/components/animations/TypingEffect";
+import { AnimatedText } from "@/components/animations/Animatetext";
 
 interface ServiceItemProps {
   number: string;
@@ -73,7 +75,17 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
       <div className="w-full h-1 bg-primary rounded"></div>
     </div>
     <div>
-      <div className="text-secondary mt-4 text-lg font-semibold">{title}</div>
+    <div className="text-secondary mt-4 text-lg font-semibold">
+      <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+        {title}
+        </TypingEffect>
+        </div>
       <div className="text-secondaryLight text-md">{description}</div>
     </div>
     <div>
@@ -99,8 +111,10 @@ const services = () => {
                 <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
                 <span className="text-sm font-semibold">SERVICES</span>
               </div>
-              <div className="text-4xl lg:text-5xl font-medium mt-4">
+              <div className="text-[2.5rem] lg:text-5xl font-medium mt-4">
+              <AnimatedText> 
                 Services Tailored to Exceed Your Every Need
+                </AnimatedText> 
               </div>
             </div>
 

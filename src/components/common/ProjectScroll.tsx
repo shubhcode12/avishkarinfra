@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import axios from "axios";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { AnimatedText } from "../animations/Animatetext";
 
 export function TracingBeamDemo(data: { project: any }) {
   const project = data.project;
@@ -22,7 +23,7 @@ export function TracingBeamDemo(data: { project: any }) {
               />
             )}
 
-            <div className="flex flex-col lg:w-1/2 pb-8">
+            <div className="flex flex-col lg:w-2/3 pb-8">
               <div className="flex flex-row gap-8">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-primary rounded-full mr-2"></div>
@@ -38,8 +39,10 @@ export function TracingBeamDemo(data: { project: any }) {
                 </div>
               </div>
 
-              <div className="text-4xl lg:text-6xl font-medium mt-4">
+              <div className="text-3xl lg:text-[3.5rem] leading-[4rem] font-medium mt-4">
+              <AnimatedText>
                 {project?.title}
+                </AnimatedText>
               </div>
             </div>
             <Markdown rehypePlugins={[rehypeRaw]}>{project?.content}</Markdown>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid2";
+import { AnimatedText } from "../animations/Animatetext";
 
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
@@ -79,7 +80,13 @@ const PropertiesSection = (data: { show: boolean }) => {
                 <span className="text-sm font-semibold">PROPERTIES</span>
               </div>
               <div className="text-4xl lg:text-6xl font-medium mt-4">
-                Newest Deals <br /> For Your Needs.
+              <AnimatedText> 
+                Newest Deals
+                </AnimatedText>
+                <AnimatedText> 
+
+                 For Your Needs.
+                </AnimatedText> 
               </div>
             </div>
             {data.show && (

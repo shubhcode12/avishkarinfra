@@ -1,3 +1,4 @@
+import { AnimatedText } from '@/components/animations/Animatetext';
 import { FollowingPointerDemo } from '@/components/common/BlogCard'
 import Footer from '@/components/common/Footer'
 import Navbar from '@/components/common/Navbar'
@@ -72,8 +73,10 @@ const blogs = () => {
             <div className="px-8 w-full ">
               <div className="flex justify-center w-full">
                 <div className="flex flex-col w-full">
-                  <div className="flex text-center justify-center text-5xl font-semibold">
+                <div className="flex text-center justify-center text-5xl font-semibold lg:mt-12">
+                  <AnimatedText> 
                     Our latest news and articles.
+                    </AnimatedText> 
                   </div>
 
                   <div className="text-center text-[#596460] mt-6">

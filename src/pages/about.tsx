@@ -5,6 +5,8 @@ import TextRevealByWord from "@/components/ui/TextReveal";
 import Image from "next/image";
 import avishkarFounder from "../../public/assets/images/about/avishkarFounder.jpeg";
 import FaqSection from "@/components/Homesections/FaqSection";
+import { AnimatedText } from "@/components/animations/Animatetext";
+import TypingEffect from "@/components/animations/TypingEffect";
 const About = () => {
   return (
     <div>
@@ -23,7 +25,9 @@ const About = () => {
                   <span className="text-sm font-semibold">OUR FOUNDER</span>
                 </div>
                 <div className="text-4xl lg:text-5xl font-medium">
+                <AnimatedText> 
                   The Visionary Behind Avishkar Infra
+                  </AnimatedText> 
                 </div>
                 <div className="text-lg text-[#596460] pr-8">
                   Avishkar Infra was founded on a bold vision and passion for
@@ -39,14 +43,34 @@ const About = () => {
                 <div className="bg-gray-400 h-[0.5px] w-full my-2"></div>
 
                 <div className="text-lg text-secondary pr-8">
-                  <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+                  <h3 className="text-2xl font-semibold mb-4">
+                  <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+                    Our Vision
+                    </TypingEffect>
+                    </h3>
                   To become the most trusted and innovative real estate
                   developer in Kolhapur, setting new standards of excellence by
-                  delivering premium-quality projects that enhance the city’s
+                  delivering premium-quality projects that enhance the city&apos;s
                   landscape and enrich the lives of its residents.
                 </div>
                 <div className="text-lg text-secondary pr-8">
-                  <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+                  <h3 className="text-2xl font-semibold mb-4">
+                    
+                  <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>Our Mission
+</TypingEffect>
+</h3>
                   Our mission is to create high-quality, sustainable living
                   spaces that combine luxury with functionality. We aim to
                   exceed client expectations with every project by leveraging
@@ -76,8 +100,10 @@ const About = () => {
                         <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
                         <span className="text-sm font-semibold">OUR TEAM</span>
                       </div>
-                      <div className="text-4xl lg:text-6xl font-medium mt-4">
+                      <div className="text-5xl lg:text-6xl font-medium mt-4">
+                      <AnimatedText> 
                         Who drives the Avishkar Infra
+                        </AnimatedText>
                       </div>
                     </div>
                     <div className="flex flex-col lg:text-end lg:justify-end">
@@ -97,6 +123,7 @@ const About = () => {
           </div>
         </div>
       </section>
+
 
       {/* <section className="w-full flex flex-col justify-center px-4 pt-24 lg:px-0">
         <div className="flex justify-center w-full">

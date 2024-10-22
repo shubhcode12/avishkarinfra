@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/router";
+import TypingEffect from "../animations/TypingEffect";
 
 function useSticky() {
   const [isSticky, setIsSticky] = useState(false);
@@ -126,7 +127,17 @@ export default function FeatureProjects() {
       <div className="border-b-1 border-t border-gray-600"></div>
       <div className="flex flex-col lg:flex-row w-full mt-8 gap-8 mb-8">
         <div className="flex flex-col lg:w-1/2">
-          <div className="text-3xl font-medium mt-4">FEATURED PROJECTS</div>
+        <div className="text-3xl font-medium mt-4">
+          <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+            FEATURED PROJECTS
+            </TypingEffect>
+            </div>
         </div>
 
         <div className="flex flex-col lg:text-end lg:justify-end">

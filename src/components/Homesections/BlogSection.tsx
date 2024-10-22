@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FollowingPointerDemo } from "../common/BlogCard";
+import { AnimatedText } from "../animations/Animatetext";
 
 const BlogSection = () => {
   const [loading, setLoading] = useState(true); // to manage loading state
@@ -28,9 +29,12 @@ const BlogSection = () => {
             <div className="px-6 lg:px-8 w-full ">
               <div className="flex justify-center w-full">
                 <div className="flex flex-col w-full">
-                  <div className="flex text-center justify-center text-5xl font-semibold">
+                <div className="flex text-center justify-center text-5xl font-semibold">
+                  <AnimatedText> 
                     Our latest news and articles.
+                    </AnimatedText>
                   </div>
+
 
                   <div className="text-center text-[#596460] mt-6">
                     Explore our latest news and articles to stay informed about<br/>

@@ -1,3 +1,5 @@
+import { AnimatedText } from "@/components/animations/Animatetext";
+import TypingEffect from "@/components/animations/TypingEffect";
 import CTA from "@/components/common/CTA";
 import ContactForm from "@/components/common/ContactForm";
 import Footer from "@/components/common/Footer";
@@ -27,8 +29,11 @@ const Contactus = () => {
                     <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
                     <span className="text-sm font-semibold">CONTACT US</span>
                   </div>
-                  <div className="text-5xl lg:text-6xl font-semibold max-w-[23rem]">
+                  <div className="text-[3.4rem] lg:text-6xl font-semibold max-w-[23rem]">
+                    <AnimatedText>
+
                     Let&apos;s make an action plan
+                    </AnimatedText>
                   </div>
                   <div className="text-xl max-w-[28rem]">
                     Don&apos;t like the form? Leave a message via email{" "}
@@ -48,11 +53,32 @@ const Contactus = () => {
       <section className="w-full">
         <div className="flex w-full flex-col lg:flex-row items-stretch">
           <div className="flex flex-col gap-4 bg-white px-8 py-14 border-b-1 border-t border-l border-b border-gray-600 flex-1">
-            <div className="text-xl font-semibold">Office Address</div>
+            <div className="text-xl font-semibold">
+                
+            <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+              Office Address
+              
+              </TypingEffect>
+              </div>
             <div className="text-lg">{contactus.address}</div>
           </div>
           <div className="flex flex-col gap-4 bg-white px-8 py-14 border-b-1 border-t border-l border-b border-gray-600 flex-1">
-            <div className="text-xl font-semibold">Call Us</div>
+            <div className="text-xl font-semibold">
+                
+            <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+              Call Us</TypingEffect></div>
             <div className="text-lg">
               {contactus.phone.map((phone, index) => (
                 <div key={index} onClick={() => handleCallClick(phone)}>
@@ -62,7 +88,14 @@ const Contactus = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4 bg-white px-8 py-14 border-b-1 border-t border-l border-b border-gray-600 flex-1">
-            <div className="text-xl font-semibold">Email Us</div>
+            <div className="text-xl font-semibold">  
+                  <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>Email Us</TypingEffect></div>
             <div className="underline">
               {contactus.email.map((mail, index) => (
                 <div key={index} onClick={() => handleMailClick(mail)}>
@@ -72,7 +105,14 @@ const Contactus = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4 bg-white px-8 py-14 border-b-1 border-t border-l border-b border-r border-gray-600 flex-1">
-            <div className="text-xl font-semibold">Follow Us</div>
+            <div className="text-xl font-semibold">  
+                  <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>Follow Us</TypingEffect></div>
             <SocialMediaList />
           </div>
         </div>

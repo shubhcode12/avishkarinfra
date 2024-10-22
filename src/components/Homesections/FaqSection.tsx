@@ -9,6 +9,8 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { faqData } from "@/data/static_content";
+import { AnimatedText } from "../animations/Animatetext";
+import TypingEffect from "../animations/TypingEffect";
 
 const FaqItem = ({
   question,
@@ -35,15 +37,26 @@ const FaqSection = () => {
                   <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
                   <span className="text-sm font-semibold">FAQ</span>
                 </div>
-                <div className="text-6xl font-semibold text-secondary">
+                <div className="text-[1.74rem] lg:text-6xl font-semibold text-secondary">
+  <AnimatedText>
+
                   Frequently asked question?
+  </AnimatedText>
                 </div>
                 <div className="text-lg text-[#596460] max-w-lg">
                   Here are some important questions that are frequently asked
                   and the answers to the questions.
                 </div>
                 <div className="text-secondary font-semibold text-xl">
+                <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
                   Have a different question?
+                  </TypingEffect>
                 </div>
                 <div>
                   <Button className="flex justify-center gap-2">
