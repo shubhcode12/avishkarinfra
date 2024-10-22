@@ -1,3 +1,4 @@
+import TypingEffect from "@/components/animations/TypingEffect";
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import axios from "axios";
@@ -53,8 +54,17 @@ const blogSlug = () => {
           <div className="px-8 w-full">
             <div className="flex flex-col-reverse lg:flex-row justify-center w-full gap-8">
               <div className="flex flex-col w-full">
-                <div className="text-4xl lg:text-5xl font-medium mt-4">
+              <div className="text-4xl lg:text-5xl font-medium mt-4">
+                <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
+
                   {post?.title}
+                  </TypingEffect>
                 </div>
                 <div className="flex flex-row gap-8 py-6">
                   <div className="flex items-center mt-3">

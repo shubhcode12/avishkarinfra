@@ -6,6 +6,7 @@ import {
 } from "@tabler/icons-react";
 
 import ContactForm from "../common/ContactForm";
+import TypingEffect from "../animations/TypingEffect";
 const ContactSection = () => {
   return (
     <section className="w-full flex pt-12 pb-24 justify-center px-2 lg:px-10">
@@ -18,7 +19,15 @@ const ContactSection = () => {
               <div className="w-full md:mt-10 lg:mt-0">
                 <div className="flex flex-col w-full gap-8">
                   <div className="text-6xl font-semibold text-secondary">
+                  <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
                     Get in touch
+                    </TypingEffect>
                   </div>
                   <div className="text-lg text-[#596460] max-w-lg">
                     Kindly fill this form with your details about your inquiries

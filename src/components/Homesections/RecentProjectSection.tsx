@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Homescreen } from "../../../public/assets/images";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
+import { AnimatedText } from "../animations/Animatetext";
 const RecentProjectSection = () => {
   return (
     <section className="w-full flex py-24 justify-center px-4 lg:px-10">
       <div className="flex justify-center w-full">
         <div className="px-8 w-full ">
           <div className="flex flex-col w-full gap-8">
-            <div className="text-center text-4xl font-semibold text-secondary">
+          <div className="text-center text-4xl font-semibold text-secondary">
+            <AnimatedText> 
               Our Recent Projects
+              </AnimatedText> 
             </div>
 
             <div className="w-full flex justify-center">

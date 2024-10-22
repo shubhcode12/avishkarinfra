@@ -4,6 +4,8 @@ import { Homescreen } from "../../../public/assets/images";
 import { common } from "../../../public/assets/icon";
 import Image from "next/image";
 import Link from "next/link";
+import TypingEffect from "../animations/TypingEffect";
+import { AnimatedText } from "../animations/Animatetext";
 const AboutHomeSection = () => {
   return (
     <section className="w-full flex py-14 lg:py-24 justify-center px-4 lg:px-10 ">
@@ -32,11 +34,22 @@ const AboutHomeSection = () => {
                 </div>
 
                 <div className="w-full text-primary text-xl font-semibold">
+                <TypingEffect 
+  typingSpeed={100}
+  deletingSpeed={50}
+  delayBetweenTexts={2000}
+  loop={true}
+  cursorChar="|"
+>
                   WHAT SETS US APART
+                  </TypingEffect>
                 </div>
               </div>
-              <div className="text-4xl font-semibold text-secondary">
+              <div className="text-[1.55rem] lg:text-4xl font-semibold text-secondary">
+              <AnimatedText> 
+
                 Discover Sustainable Luxury Living with EcoHaven Realty.
+                </AnimatedText>
               </div>
               <div className="text-lg">
                 Established in the year 2005, Avishkar Group in Kalamba Ring

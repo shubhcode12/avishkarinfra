@@ -1,3 +1,4 @@
+import { AnimatedText } from "@/components/animations/Animatetext";
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import VideoGridDemo from "@/components/common/VideoGrid";
@@ -87,8 +88,10 @@ const GalleryPage = () => {
                   <span className="text-sm font-semibold">GALLERY</span>
                 </div>
                 <div className="flex justify-center flex-col w-full gap-4">
-                  <div className="text-4xl lg:text-6xl font-medium mt-4">
+                <div className="text-4xl lg:text-6xl font-medium mt-4">
+                  <AnimatedText> 
                     Explore Our Gallery
+                    </AnimatedText> 
                   </div>
                   <div className="text-secondary text-start max-w-2xl">
                     The real estate photos in our gallery have been proven to

@@ -1,6 +1,7 @@
 "use client";
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel2";
 import { useEffect, useState } from "react";
+import { AnimatedText } from "../animations/Animatetext";
 
 export function ReviewsSection() {
   const [reviews, setReviews] = useState<any[]>([]);
@@ -36,8 +37,10 @@ export function ReviewsSection() {
   return (
     <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-fixed bg-cover bg-no-repeat py-24">
       <div className="w-full h-full">
-        <div className="flex text-center justify-center text-5xl font-semibold">
+      <div className="flex text-center justify-center text-[2rem] lg:text-5xl font-semibold">
+          <AnimatedText> 
           What our customers say?
+          </AnimatedText>
         </div>
 
         <div className="text-center text-[#596460] mt-6">

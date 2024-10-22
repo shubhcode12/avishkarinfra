@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+import { AnimatedText } from "../animations/Animatetext";
 
 const CTA = () => {
   return (
@@ -7,8 +8,10 @@ const CTA = () => {
         <div className="px-8 w-full">
           <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8">
             <div className="flex flex-col justify-end w-full gap-4">
-              <div className="text-6xl font-semibold text-secondary max-w-lg">
+            <div className="text-[2.4rem] lg:text-6xl font-semibold text-secondary max-w-lg">
+              <AnimatedText> 
                 Still cant find right Properties?
+                </AnimatedText>
               </div>
               <div className="text-secondaryLight max-w-sm text-xl">
                 Are you interested in a property or have any other inquiries?
