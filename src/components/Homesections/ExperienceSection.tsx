@@ -16,9 +16,9 @@ const ExperienceSection = () => {
           <div className="flex justify-center w-full">
             <div className="flex flex-col w-full gap-8">
               <div className="text-[1.5rem] lg:text-6xl font-semibold text-secondary uppercase lg:leading-[4rem] text-transparent bg-gradient-to-r from-secondary to-gray-300 inline-block bg-clip-text">
-                <AnimatedText>
+                {/* <AnimatedText> */}
                   We've found luxury homes for clients for a decade.
-                </AnimatedText>
+                {/* </AnimatedText> */}
               </div>
               <div className="text-lg text-md">
                 We take great pride in ensuring the satisfaction of our
