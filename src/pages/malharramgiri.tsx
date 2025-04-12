@@ -1,6 +1,5 @@
 import React from "react";
 import PropertyListing from "../components/RealEstate/PropertyListing";
-import SEO from "../components/common/SEO";
 import Head from "next/head";
 
 const MalharRamgiri: React.FC = () => {
@@ -135,14 +134,28 @@ const MalharRamgiri: React.FC = () => {
   return (
     <>
       <Head>
-        <SEO
-          title={seoTitle}
-          description={seoDescription}
-          canonical="/projects/malhar-ramgiri"
-          ogImage={ogImage}
-          ogType="realestate.property"
-          structuredData={structuredData}
-        />
+      <title>{`${propertyData.subtitle} | Avishkar Infra`}</title>
+        <meta name="description" content={seoDescription} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={pageUrl} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:title" content={`${propertyData.subtitle} | Avishkar Infra`} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:image" content={`${propertyData.images[0]}`} />
+        <meta property="og:image:alt" content={propertyData.title} />
+        <meta property="og:site_name" content="Avishkar Infra" />
+       
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={pageUrl} />
+        <meta name="twitter:title" content={`${propertyData.subtitle} | Avishkar Infra`} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={`${propertyData.images[0]}`} />
       </Head>
 
       <div className="min-h-screen bg-gray-50">
