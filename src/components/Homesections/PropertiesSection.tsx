@@ -96,7 +96,7 @@ const PropertiesSection = (data: { show: boolean }) => {
                   properties that perfectly blend modern architecture with
                   natural beauty.
                 </p>
-                <Link href="/properties">
+                <Link href="/properties" passHref>
                   <button className="bg-[#ef7f1a] text-white px-6 py-3 rounded-full w-fit self-end">
                     View All Properties
                   </button>
@@ -127,7 +127,7 @@ const PropertiesSection = (data: { show: boolean }) => {
 
           {/* Project Grid */}
           <div className="w-full">
-            <BentoGrid className="w-full mx-auto">
+            <BentoGrid className="w-full mx-auto gap-8">
               {loading
                 ? Array(6)
                     .fill(0)
