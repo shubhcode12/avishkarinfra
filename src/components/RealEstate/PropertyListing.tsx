@@ -75,7 +75,7 @@ const PropertyListing: React.FC<PropertyListingProps> = ({
     const messageTemplate = `
 Hello, 
 
-I am ${name} and I'm interested in the Malhar Ramgiri Project.
+I am ${name} and I'm interested in the ${subtitle} Project.
 
 Contact Details:
 - Name: ${name}
