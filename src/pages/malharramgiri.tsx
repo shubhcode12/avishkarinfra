@@ -1,7 +1,8 @@
 import React from 'react';
 import PropertyListing from '../components/RealEstate/PropertyListing';
+import SEO from '../components/common/SEO';
 
-const malharramgiri: React.FC = () => {
+const MalharRamgiri: React.FC = () => {
   // Project data for Malhar Ramgiri
   const propertyData = {
     title: "Avishkar Infra",
@@ -89,11 +90,59 @@ const malharramgiri: React.FC = () => {
     ]
   };
 
+  // SEO data
+  const seoTitle = "Malhar Ramgiri - NA Open Plots in Hatkanangale by Avishkar Infra";
+  const seoDescription = "Invest in premium NA Open Plots at Malhar Ramgiri, Hatkanangale. Ready possession plots with 24-hour water supply, MSEB light, internal tar roads, and separate 7/12 for every plot. Developed by Avishkar Infra.";
+  const ogImage = "https://www.gruhkhoj.com/media/images/gallery-images/protected-resized-Malharramgariboards003.jpg";
+  const pageUrl = "https://www.avishkarinfra.com/projects/malhar-ramgiri";
+
+  // Structured data for rich results
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Malhar Ramgiri",
+    "description": seoDescription,
+    "url": pageUrl,
+    "image": propertyData.images[0],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. S. No. 1175, Near Tahasildar Office",
+      "addressLocality": "Hatkanangale",
+      "addressRegion": "Kolhapur",
+      "postalCode": "",
+      "addressCountry": "IN"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for Price",
+      "priceCurrency": "INR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Avishkar Infra",
+      "telephone": "+917276080909",
+      "url": "https://avishkarinfra.com/"
+    }
+  };
+
+  
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PropertyListing {...propertyData} />
-    </div>
+    <>
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        canonical="/projects/malhar-ramgiri"
+        ogImage={ogImage}
+        ogType="realestate.property"
+        structuredData={structuredData}
+      />         
+      
+      <div className="min-h-screen bg-gray-50">
+        <PropertyListing {...propertyData} />
+      </div>
+    </>
   );
 };
 
-export default malharramgiri; 
+export default MalharRamgiri; 
