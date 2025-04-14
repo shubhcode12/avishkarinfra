@@ -58,7 +58,7 @@ const AboutHomeSection = () => {
               </div>
             </div>
             <div className="w-full ">
-              <Image src={Homescreen.home1} className="w-full h-full" alt="" />
+              <Image src={Homescreen.home1} className="w-full h-full rounded-3xl" alt="" />
             </div>
           </div>
         </div>
