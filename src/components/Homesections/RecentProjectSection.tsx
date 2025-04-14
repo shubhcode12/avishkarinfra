@@ -9,10 +9,8 @@ const RecentProjectSection = () => {
       <div className="flex justify-center w-full">
         <div className="px-8 w-full ">
           <div className="flex flex-col w-full gap-8">
-          <div className="text-center text-4xl font-semibold text-secondary">
-            <AnimatedText> 
+            <div className="text-center text-4xl font-semibold text-secondary">
               Our Recent Projects
-              </AnimatedText> 
             </div>
 
             <div className="w-full flex justify-center">
@@ -26,7 +24,11 @@ const RecentProjectSection = () => {
               <div className="flex flex-col lg:flex-row gap-8">
                 <div className="w-full flex flex-col gap-8">
                   <div className="rounded-[2.8rem]">
-                    <Image src={Homescreen.lobby} className="h-72 rounded-[2.8rem] object-cover" alt="" />
+                    <Image
+                      src={Homescreen.lobby}
+                      className="h-72 rounded-[2.8rem] object-cover"
+                      alt=""
+                    />
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="bg-primary text-white rounded-[2.8rem] flex flex-col gap-4 p-8">
