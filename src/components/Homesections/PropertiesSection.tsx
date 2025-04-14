@@ -72,21 +72,15 @@ const PropertiesSection = (data: { show: boolean }) => {
   return (
     <section className="w-full flex py-28 justify-center px-0 lg:px-10 bg-[#f7f7f7]">
       <div className="flex justify-center w-full">
-        <div className="px-8 w-full">
-          <div className="flex flex-col lg:flex-row w-full gap-8 mb-8">
+        <div className="px-8 w-full space-y-8">
+          <div className="flex flex-col lg:flex-row w-full gap-8">
             <div className="flex flex-col lg:w-1/2">
               <div className="flex items-center">
                 <div className="w-4 h-4 bg-primary rounded-full mr-2"></div>
                 <span className="text-sm font-semibold">PROPERTIES</span>
               </div>
               <div className="text-4xl lg:text-6xl font-medium mt-4">
-              <AnimatedText> 
-                Newest Deals
-                </AnimatedText>
-                <AnimatedText> 
-
-                 For Your Needs.
-                </AnimatedText> 
+                Newest Deals <br /> For Your Needs.
               </div>
             </div>
             {data.show && (
@@ -104,15 +98,12 @@ const PropertiesSection = (data: { show: boolean }) => {
               </div>
             )}
           </div>
-          {/* Category Buttons */}
-          <div className="flex w-fit px-2 py-2 flex-wrap gap-2 mb-8 lg:bg-white lg:rounded-full overflow-x-auto">
-            {/* All Button */}
+          <div className="flex w-fit px-2 py-2 flex-wrap gap-2 lg:bg-white lg:rounded-full overflow-x-auto">
             <CategoryButton
               category="All"
               selectedCategory={selectedCategory}
               onClick={filterProjects}
             />
-            {/* Dynamic Category Buttons */}
             {categories.map((category: any) => (
               <CategoryButton
                 key={category.id}
@@ -122,10 +113,7 @@ const PropertiesSection = (data: { show: boolean }) => {
               />
             ))}
           </div>
-
-          <div className="bg-gray-400 h-[0.5px] w-full mb-8"></div>
-
-          {/* Project Grid */}
+          <div className="bg-gray-400 h-[0.5px] w-full"></div>
           <div className="w-full">
             <BentoGrid className="w-full mx-auto gap-8">
               {loading

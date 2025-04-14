@@ -19,11 +19,11 @@ export default function Home() {
     <div className="">
       <Navbar />
       <HeroWithOceanVideo />
+      <PropertiesSection show={true} />
       <AboutHomeSection />
       <ExperienceSection />
       <KeyPointsSection />
-      <RecentProjectSection />
-      <PropertiesSection show={true} />
+      <RecentProjectSection />      
       <BlogSection />
       <ReviewsSection />
       <FaqSection />
