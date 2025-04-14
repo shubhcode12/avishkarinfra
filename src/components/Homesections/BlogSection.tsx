@@ -40,9 +40,9 @@ const BlogSection = () => {
                     Explore our latest news and articles to stay informed about<br/>
                     the latest trends and insights in the real estate market.
                   </div>
-                  <div className="max-w-6xl mt-12">
-                    <div className="w-full ">
-                      <div className="grid grid-cols-1 lg:grid-cols-3">
+                  <div className="max-w-6xl mt-12 mx-auto">
+                    <div className="w-full">
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         {posts.map((item: any) => (
                           <FollowingPointerDemo
                             key={item.slug}
