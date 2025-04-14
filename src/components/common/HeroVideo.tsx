@@ -39,8 +39,8 @@ export default function HeroWithOceanVideo() {
         <div className="relative z-9 text-white px-10 py-6 w-full">          
           <div className="w-3 h-3 mb-2 bg-[#ef7f1a] rounded-full animate-pulse"></div>
           <p className="text-xl mb-4 text-start font-light tracking-wide max-w-sm">
-            Discover the Advantages of Eco-Friendly Homes with Our Real Estate
-            Agency.
+            Experience premium residential and commercial properties by Avishkar Infra,
+            a trusted developer since 2005.
           </p>
 
           <div className="relative text-start h-24">
