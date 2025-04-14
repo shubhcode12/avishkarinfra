@@ -9,27 +9,27 @@ import { AnimatedText } from "../animations/Animatetext";
 const KeyPointsSection = () => {
    const projects = [
     {
-      title: "Modern, Eco-Friendly Homes",
+      title: "Premium Residential Spaces",
       description:
-        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+        "We create luxurious living spaces with modern amenities, thoughtful design, and premium finishes for comfortable family living.",
       link: "#",
     },
     {
-      title: "Prime City Locations",
+      title: "Prime Kolhapur Locations",
       description:
-        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+        "Our properties are strategically located in Kolhapur's most desirable areas, offering convenience, accessibility, and excellent investment potential.",
       link: "#",
     },
     {
-      title: "Community-Focused Living",
+      title: "Commercial Developments", 
       description:
-        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+        "We develop state-of-the-art commercial spaces designed to meet the evolving needs of businesses with optimal functionality and aesthetic appeal.",
       link: "#",
     },
     {
-      title: "Sustainable Architecture",
+      title: "Quality Construction Since 2005",
       description:
-        "Our homes are designed with energy-efficient appliances, smart home technology, and sustainable materials.",
+        "With over 15 years of experience, we maintain the highest standards of construction quality, using superior materials and innovative techniques.",
       link: "#",
     },
   ];
