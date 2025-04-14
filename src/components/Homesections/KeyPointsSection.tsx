@@ -40,10 +40,8 @@ const KeyPointsSection = () => {
         <div className="flex justify-center w-full">
           <div className="px-4 w-full ">
             <div className="flex flex-col gap-8 lg:flex-row justify-center lg:justify-between  items-end w-full">
-            <div className="text-white font-semibold text-[2.4rem] lg:text-5xl max-w-3xl">
-              <AnimatedText> 
-                Where Innovation, Sustainability, and Community Meet
-                </AnimatedText>
+            <div className="text-white font-semibold text-[2.4rem] lg:text-5xl max-w-3xl">            
+                Building Excellence, Creating Landmarks, Transforming Lives          
               </div>
               <div className="flex justify-start w-full lg:w-auto">
               <Link href="/projects">            
