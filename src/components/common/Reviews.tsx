@@ -37,10 +37,8 @@ export function ReviewsSection() {
   return (
     <section className="bg-[url('../../public/assets/images/home/reviewBg.png')] bg-fixed bg-cover bg-no-repeat py-24">
       <div className="w-full h-full">
-      <div className="flex text-center justify-center text-[2rem] lg:text-5xl font-semibold">
-          <AnimatedText> 
+        <div className="flex text-center justify-center text-[2rem] lg:text-5xl font-semibold">
           What our customers say?
-          </AnimatedText>
         </div>
 
         <div className="text-center text-[#596460] mt-6">
