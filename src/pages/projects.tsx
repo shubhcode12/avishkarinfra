@@ -31,14 +31,14 @@ const Projects = () => {
           <AppleCardsCarouselDemo />
         </div>
       </section> */}
-      <section className="w-full flex flex-col pt-40 justify-center px-2 lg:px-10">
+      {/* <section className="w-full flex flex-col pt-40 justify-center px-2 lg:px-10">
         <div className="flex px-6 justify-center w-full">
           <div className="w-full">
             <FeatureProjects/>
           </div>
         </div>
-      </section>
-      <PropertiesSection  show={false}/>
+      </section> */}
+      <PropertiesSection show={false} />
     </div>
   );
 };
