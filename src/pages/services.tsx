@@ -76,15 +76,9 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
     </div>
     <div>
     <div className="text-secondary mt-4 text-lg font-semibold">
-      <TypingEffect 
-  typingSpeed={100}
-  deletingSpeed={50}
-  delayBetweenTexts={2000}
-  loop={true}
-  cursorChar="|"
->
+      
         {title}
-        </TypingEffect>
+       
         </div>
       <div className="text-secondaryLight text-md">{description}</div>
     </div>
@@ -112,9 +106,9 @@ const services = () => {
                 <span className="text-sm font-semibold">SERVICES</span>
               </div>
               <div className="text-[2.5rem] lg:text-5xl font-medium mt-4">
-              <AnimatedText> 
+            
                 Services Tailored to Exceed Your Every Need
-                </AnimatedText> 
+            
               </div>
             </div>
 
